@@ -1,0 +1,160 @@
+.upMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  margin: 0 360px;
+}
+
+.upMenuLogo {
+  display: flex;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.logoText {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+  margin-left: 5px;
+}
+
+.upMenuInf {
+  display: flex;
+  grid-gap: 10px;
+}
+
+.notifBell {
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.notifBell i:hover {
+  color: #1e5128;
+  transition: all 0.20s ease 0s;
+}
+
+.ava {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all 0.20s ease 0s;
+}
+
+.ava:hover {
+  background-color: #1e5128;
+  opacity: 0.6;
+}
+
+.windNotif {
+  display: none;
+  width: 23%;
+  height: 55%;
+  position: absolute;
+  right: 360px;
+  top: 50px;
+  background-color: #212421;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0px 0px 14px 2px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  font-size: 16px;
+}
+
+.windNotifHeader {
+  padding: 10px;
+}
+
+.windNotifElement {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.windNotifElement:hover {
+  background-color: #191a19;
+}
+
+.windNotifElementStyle {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.windNotifUserInf {
+  display: flex;
+}
+
+.notifAva {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.notifImg {
+  width: 70px;
+  border-radius: 10px;
+}
+
+.windUser {
+  width: 10%;
+  height: auto;
+  padding: 10px;
+}
+
+.windUserButt {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background-color: #191a19;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.20s ease 0s;
+  margin-bottom: 5px;
+}
+
+.windUserButt:hover {
+  background-color: #1e5128;
+}
+
+.windUserButt:last-child {
+  margin-bottom: 0;
+}
+
+.windUserIcon {
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 2px;
+}
+
+.windUserText {
+  margin-left: 35px;
+}
+
+.open {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .upMenu {
+    margin: 0 70px;
+  }
+}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 550px) {
+  .upMenu {
+    margin: 0 5px;
+  }
+}

@@ -1,0 +1,69 @@
+.popUpRight {
+    position: fixed;
+    width: 365px;
+    height: 60px;
+    top: 10px;
+    right: 10px;
+    background-color: #212421;
+    border-radius: 10px;
+    box-shadow: 0px 0px 14px 2px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    z-index: 9999999;
+}
+
+.popUpRight.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.popUpRight.hide {
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+}
+
+.progressBar,
+.progressBarFalse {
+    position: relative;
+    margin: 5px 10px 0 10px;
+    height: 4px;
+    background-color: #4e9f3d;
+    width: 100%;
+    border-radius: 10px;
+    animation: progressBar 3s linear forwards;
+}
+
+@keyframes progressBar {
+    from {
+        width: 95%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+.popUpText,
+.popUpTextFalse {
+    color: white;
+    margin: 10px;
+}
+
+.popUpTextFalse i {
+    color: #B31312;
+}
+
+.progressBarFalse {
+    background-color: #B31312;
+}
+
+@media (max-width: 550px) {
+    .popUpRight {
+        width: 100%;
+        right: 0;
+        top: 5px;
+    }
+}

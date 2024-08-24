@@ -1,0 +1,319 @@
+.menuPage {
+  background-color: #212421;
+}
+
+.blocks {
+  display: flex;
+}
+
+.block1 {
+  width: 35%;
+}
+
+.profile {
+  width: 100%;
+  height: auto;
+  background-color: #212421;
+  border-radius: 10px;
+}
+
+.profileStyle {
+  padding: 10px;
+}
+
+.profileLine {
+  margin: 20px 0;
+}
+
+.profileBack {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.profileAvaUser {
+  position: absolute;
+  margin-top: -50px;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profileHref {
+  position: absolute;
+  display: flex;
+  grid-gap: 2px;
+  margin-left: 80px;
+  font-size: 20px;
+}
+
+.profileHref i:hover {
+  cursor: pointer;
+  color: #1e5128;
+  transition: all 0.20s ease 0s;
+}
+
+.profileHeader {
+  display: flex;
+  margin-top: 35px;
+}
+
+.profileName {
+  margin: 0;
+  margin-right: 5px;
+  font-size: 25px;
+  color: white;
+}
+
+.profileDescription {
+  margin: 0;
+  margin-top: 5px;
+  color: #828282;
+  font-size: 16px;
+}
+
+.profileButtons {
+  display: flex;
+  grid-gap: 5px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.hrText {
+  margin: 0;
+  margin-top: -12px;
+  color: #828282;
+  width: 100%;
+  text-align: center;
+}
+
+.hrBack {
+  background-color: #212421;
+  padding: 0 5px;
+}
+
+.windSubtitle {
+  margin: 0;
+  color: white;
+  font-size: 16px;
+}
+
+.windImages {
+  display: flex;
+}
+
+.windImg {
+  width: 50%;
+}
+
+.windEditImg {
+  margin-left: 10px;
+}
+
+.windEditImgClick {
+  font-size: 16px;
+  color: white;
+  margin: 0;
+  margin-bottom: 5px;
+  transition: all 0.20s ease 0s;
+}
+
+.windEditImgClick:hover {
+  color: #1e5128;
+  cursor: pointer;
+}
+
+.windProfileBack {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.windProfileAva {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: -40px;
+  margin-left: 10px;
+}
+
+#upload div {
+  position: relative;
+ }
+ #upload input[type=file] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  position: absolute;
+  z-index: -10;
+ }
+ 
+#fileWarnSize {
+  color: #B31312;
+}
+
+.windLinks details {
+  width: 100%;
+}
+
+.windLinkSettings {
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.20s ease 0s;
+}
+
+.windLinkSettings:hover {
+  color: #828282;
+}
+
+.windLinkSettings i {
+  font-size: 25px;
+  margin-top: 10px;
+  float: left;
+}
+
+.windLinkSettings div {
+  margin-left: 35px;
+}
+
+.windLinksInput {
+  display: flex;
+  grid-gap: 5px;
+  margin-top: 10px;
+}
+
+.linkDelButt {
+  width: 5%;
+  height: 1%;
+  text-align: center;
+  background-color: #191a19;
+}
+
+.linkDelButt:hover {
+  background-color: #1e5128;
+}
+
+.windLinkNew {
+  float: none;
+  width: 150px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.windLinkNewEmpty {
+  margin: 0 auto;
+}
+
+.windNoLinks {
+  margin: 0;
+  color: #828282;
+  font-size: 15px;
+}
+
+.windNoLinks i {
+  color: #828282;
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+/* .windSafety p {
+  color: white;
+  font-size: 16px;
+} */
+
+.windEditDescription {
+  margin-top: 30px;
+}
+
+.inputLink {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.block2 {
+  width: 65%;
+  margin-left: 5px;
+}
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post {
+  width: 32.5%;
+  height: 20vh;
+  margin: 0 5px 5px 0;
+  background-color: #212421;
+  border-radius: 10px;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: all 0.20s ease 0s;
+}
+
+.post:hover {
+  background-color: #1e5128;
+  opacity: 0.6;
+}
+
+.postStyle {
+  padding: 10px;
+}
+
+.postStyle p {
+  margin: 0;
+  -webkit-line-clamp: 7;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.postClear {
+  color: #828282;
+  font-size: 18px;
+  text-align: center;
+}
+
+.postClear p {
+  margin: 0;
+}
+
+.postClearButt {
+  width: 40%;
+  background-color: #4e9f3d;
+}
+
+#postClearIcon {
+  color: #828282;
+  font-size: 35px;
+  margin: 10px 0;
+}
+
+.invInput {
+  display: none;
+}
+
+@media (max-width: 550px) {
+  .blocks {
+    display: block;
+  }
+  .block1, .block2 {
+    width: 100%;
+    margin: 0;
+  }
+  .posts {
+    margin-top: 10px;
+  }
+  .post {
+    width: 31.94%;
+    height: 15vh;
+  }
+}

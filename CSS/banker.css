@@ -1,0 +1,145 @@
+.menuBanker {
+    background-color: #212421;
+}
+
+.searchBar {
+    display: flex;
+}
+
+.searchButt {
+    padding: 15px 20px;
+    border: 2px solid #4e9f3d;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    transition: all 0.20s ease 0s;
+}
+
+.searchButt:hover {
+    color: #1e5128;
+    border: 2px solid #1e5128;
+}
+
+.searchInp {
+    border-radius: 10px 0 0 10px;
+}
+
+.searchInp:focus {
+    outline: none;
+}
+
+.universal-box {
+    width: 100%;
+    height: auto;
+    background-color: #212421;
+    border-radius: 10px;
+    position: relative;
+}
+
+.card-box {
+    display: flex;
+    grid-gap: 10px;
+    margin-top: 5px;
+}
+
+.card-design {
+    width: 150px;
+    border-radius: 10px;
+    position: relative;
+    margin: 10px;
+    margin-right: 0;
+}
+
+.card-num {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: .7px .7px 5px black;
+    cursor: pointer;
+}
+
+.card-info {
+    margin: 10px;
+    margin-left: 0;
+    color: white;
+}
+
+.card-name {
+    font-size: 20px;
+}
+
+.card-balance {
+    font-size: 35px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.card-action {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.card-butt {
+    width: auto;
+    background-color: #191a19;
+    padding: 10px;
+}
+
+.data-empty-mess {
+    margin-top: 15px;
+    color: #828282;
+}
+
+.user-info-card {
+    margin: 10px 0;
+}
+
+.form-card-change {
+    display: none;
+}
+
+.card-change {
+    margin-top: 5px;
+    padding-bottom: 10px;
+}
+
+.pole-card-change {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.card-change button {
+    background-color: #4e9f3d;
+    margin-top: 5px;
+}
+
+.transaction-info {
+    display: none;
+    margin: 0 10px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+table {
+    width: 100%;
+}
+
+tr:hover {
+    background-color: #1e5128;
+    transition: all 0.20s ease 0s;
+}
+
+table,
+th,
+td {
+    border: 1px solid grey;
+    text-align: center;
+}
+
+th,
+td {
+    padding: 10px 5px;
+}

@@ -1,0 +1,372 @@
+.menuContent {
+  background-color: #212421;
+}
+
+.advertising {
+  width: 100%;
+  height: 200px;
+  background-color: #212421;
+  border-radius: 10px;
+}
+
+.parts {
+  margin-top: 10px;
+  display: flex;
+  grid-gap: 10px;
+}
+
+.contentPart {
+  width: 75%;
+}
+
+.supportPart {
+  width: 25%
+}
+
+.supportWind {
+  background-color: #212421;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.supportText {
+  text-align: center;
+  color: #fff;
+}
+
+.supportButt {
+  margin-top: 10px;
+  background-color: #4e9f3d;
+}
+
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+
+.slides {
+  display: none;
+}
+
+.slides img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.dots {
+  text-align: center;
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  border: 2px solid #4e9f3d;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 0.20s ease 0s;
+}
+
+.active,
+.dot:hover {
+  border: 2px solid #1e5128;
+  background-color: #1e5128;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+.post {
+  background-color: #212421;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 7px;
+  color: white;
+  position: relative;
+}
+
+.newPostBackground {
+  background-color: #212421;
+  border-radius: 10px;
+}
+
+.newPost {
+  display: flex;
+  align-items: center;
+  grid-gap: 5px;
+  margin: 0;
+  position: relative;
+}
+
+.userInfo {
+  display: flex;
+  grid-gap: 5px;
+}
+
+.userAva {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.newPostPole {
+  text-indent: 0;
+  border-radius: 0;
+  resize: none;
+  overflow: hidden;
+  min-height: 1.5em;
+  box-sizing: border-box;
+}
+
+.newPostButt {
+  font-size: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.newPostButt i:hover {
+  transition: all 0.2s ease 0s;
+  color: #1e5128;
+}
+
+.newPostPole:focus {
+  outline: none;
+}
+
+.imagePreview {
+  width: 70%;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 40%;
+}
+
+.userName {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.postTime {
+  font-size: 14px;
+  color: #828282;
+}
+
+.postMoreInfo {
+  color: #828282;
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transition: all 0.20s ease 0s;
+  cursor: pointer;
+}
+
+.postMoreInfo:hover {
+  color: #545454;
+}
+
+.postComplaint {
+  right: 40px;
+  font-size: 16px;
+}
+
+.postComplaint i {
+  color: #828282;
+}
+
+.postFile {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.postText {
+  margin-top: 5px;
+  white-space: pre-line;
+  word-wrap: break-word;
+}
+
+.postHr {
+  margin: 10px 0;
+}
+
+.postIcons {
+  font-size: 20px;
+  display: flex;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.postIcons i:hover {
+  cursor: pointer;
+  transition: all 0.20s ease 0s;
+  color: #1e5128;
+}
+
+.likeable-object button {
+  border: none;
+  background-color: #212421;
+  font-size: 20px;
+}
+
+.share {
+  transform: rotate(7deg);
+}
+
+.commentContainer {
+  margin-top: 5px;
+}
+
+.commentHeader {
+  color: #828282;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.20s ease 0s;
+}
+
+.commentHeader:hover {
+  color: #545454;
+}
+
+.userAvaComment {
+  width: 40px;
+  height: 40px;
+}
+
+.newComment {
+  display: flex;
+  grid-gap: 5px;
+  margin-top: 5px;
+}
+
+.comment {
+  margin-top: 10px;
+}
+
+.userNameComment {
+  font-size: 16px;
+}
+
+.commentText {
+  margin: 5px 0 5px 45px;
+}
+
+.commentAnswerHeader {
+  margin-left: 45px;
+  font-size: 16px;
+}
+
+.newAnswer {
+  margin-left: 45px;
+  margin-bottom: 5px;
+}
+
+.answerContainer {
+  margin-left: 45px;
+}
+
+.answerHeader {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.postInfoButt {
+  text-align: left;
+  padding: 10px;
+}
+
+.postInfoButt:hover {
+  background-color: #191a19;
+}
+
+.postInfoHr {
+  margin: 5px 0;
+}
+
+.postInfoLikeUser {
+  display: flex;
+  align-items: center;
+  grid-gap: 5px;
+  font-weight: 600;
+}
+
+.buttonDelPost {
+  display: flex;
+  grid-gap: 5px;
+}
+
+.buttonDelPost button {
+  width: 100%;
+  float: none;
+  background-color: #191a19;
+}
+
+.complaintInfo {
+  color: #828282;
+  text-align: center;
+}
+
+.windPostEdit {
+  width: 35%;
+}
+
+.postEditFile {
+  margin-top: 5px;
+}
+
+@media (max-width: 1024px) {
+  .windPostEdit {
+    width: 60%;
+  }
+}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 550px) {
+  .parts {
+    display: block;
+  }
+
+  .contentPart {
+    width: 100%;
+  }
+
+  .supportPart {
+    display: none;
+  }
+
+  .userInfo {
+    width: 80%;
+  }
+}

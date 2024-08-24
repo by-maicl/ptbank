@@ -1,0 +1,120 @@
+.menuPlayers {
+    background-color: #212421;
+}
+
+.user {
+    width: 100%;
+    height: auto;
+    background-color: #212421;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.20s ease 0s;
+    position: relative;
+}
+
+.user:hover {
+    background-color: #2124217d;
+}
+
+.user div {
+    display: flex;
+    align-items: center;
+}
+
+.addUser {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.avaUser {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px;
+    margin-right: 5px;
+}
+
+.username {
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+}
+
+.profileRoleUser {
+    margin: 10px;
+    position: absolute;
+    margin-left: 45%;
+}
+
+.actions {
+    margin: 10px;
+    font-size: 18px;
+    grid-gap: 5px;
+}
+
+.actions i {
+    background-color: #191a19;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.20s ease 0s;
+}
+
+.actionsButt:hover {
+    color: #1e5128;
+}
+
+.delUser:hover {
+    color: #B31312;
+}
+
+.windUserChange {
+    width: 30%;
+}
+
+.resetPassword {
+    margin-top: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.resetPasswordInp,
+.passwordCheckMark {
+    display: none;
+}
+
+.resetPasswordInp:checked~.resetPassword {
+    background-color: #1e5128;
+}
+
+.resetPasswordInp:checked~.resetPassword .passwordCheckMark {
+    display: inline;
+}
+
+.hrChangeUser {
+    margin: 10px 0;
+}
+
+.deleteUserInfo {
+    color: #B31312;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.buttonDel {
+    display: flex;
+    grid-gap: 5px;
+}
+
+.buttonDel button {
+    width: 100%;
+    float: none;
+    background-color: #191a19;
+}

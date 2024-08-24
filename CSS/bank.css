@@ -1,0 +1,364 @@
+.menuBank {
+  background-color: #212421;
+}
+
+.noCard p {
+  margin: 0;
+  color: #828282;
+}
+
+.noCardButt {
+  float: none;
+  margin: 0;
+  margin-top: 10px;
+  padding: 10px 40px;
+}
+
+.parts {
+  display: flex;
+}
+
+.partCard {
+  width: 35%;
+}
+
+.partTrans {
+  width: 65%;
+  margin-left: 5px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: all 0.20s ease 0s;
+}
+
+.card:hover {
+  background-color: #212421;
+}
+
+.cardChoise {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #212421;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 5px;
+  z-index: 1;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardName {
+  margin: 0;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.cardNameChoise {
+  font-weight: normal;
+}
+
+.cardSettings {
+  display: block;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+.cardSettings i {
+  color: #828282;
+  cursor: pointer;
+  transition: all 0.20s ease 0s;
+}
+
+.cardSettings i:hover {
+  color: #1e5128;
+}
+
+.cardSettings i:last-child:hover {
+  color: #b31212b9;
+}
+
+.cardInf {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardInfChoise {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.cardBalance {
+  margin: 0;
+  margin-top: 3px;
+  color: #828282;
+  font-size: 20px;
+}
+
+.cardBalanceChoise {
+  margin: 0;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.cardBalanceTransfer {
+  margin: 0;
+  color: #828282;
+}
+
+.cardDesign_Balance {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  width: 110px;
+  height: 70px;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+}
+
+.cardDesign {
+  width: 120px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 10px;
+  position: relative;
+}
+
+.cardNumber {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  text-shadow: .7px .7px 5px black;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  grid-gap: 5px;
+}
+
+.bankButt {
+  border-radius: 15px;
+}
+
+.bankButt i {
+  font-size: 20px;
+}
+
+.trans {
+  margin-top: 5px;
+}
+
+.transElement {
+  border-radius: 10px;
+  background-color: #191a19;
+  cursor: pointer;
+  transition: all 0.20s ease 0s;
+}
+
+.transElement:hover {
+  background-color: #212421;
+}
+
+.transElementStyle {
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transUserInf {
+  display: flex;
+  align-items: center;
+  grid-gap: 5px;
+}
+
+.userAvaTrans {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.nameTrans {
+  margin: 0;
+  color: white;
+}
+
+.balanceChange {
+  font-size: 18px;
+}
+
+.windBank {
+  width: 30%;
+}
+
+.windText {
+  margin: 0;
+  margin-top: 10px;
+  color: white;
+}
+
+.cardDesignsHeader {
+  margin: 15px 0 10px 0;
+  color: #828282;
+}
+
+.cardDesigns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardDes {
+  width: auto;
+}
+
+.cardDesignNewCard {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  cursor: pointer;
+  border: 2px solid #212421;
+}
+
+.cardDes input:checked+.cardDesignNewCard {
+  border: 2px solid #4e9f3d;
+}
+
+.buttonDelCard {
+  display: flex;
+  grid-gap: 5px;
+}
+
+.buttonDelCard button {
+  width: 100%;
+  float: none;
+  background-color: #191a19;
+}
+
+.transWind input {
+  margin-top: 10px;
+}
+
+.xmarkTransInf {
+  position: absolute;
+}
+
+.transHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-gap: 5px;
+  cursor: pointer;
+}
+
+.transInfBalance {
+  margin: 0;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.transInfButt {
+  width: 100%;
+  background-color: #191a19;
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 16px;
+  text-align: left;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.20s ease 0s;
+}
+
+.transInfButtIcon {
+  position: absolute;
+  left: 25px;
+}
+
+.transInfButtMess {
+  padding-left: 30px;
+}
+
+.transInfButt:hover {
+  background-color: #1e5128;
+}
+
+.warnIcon {
+  font-size: 50px;
+  margin-top: 10px;
+  color: #828282;
+}
+
+.penaltyBack {
+  display: flex;
+  align-items: center;
+  grid-gap: 5px;
+  font-size: 25px;
+  color: white;
+  margin: 0 0 5px 0;
+}
+
+.penalties {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 5px;
+}
+
+.penalty {
+  flex: 1 1 30%;
+  max-width: 30%;
+  height: auto;
+  background-color: #212421;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+}
+
+.penaltyHeader {
+  margin: 0;
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+table {
+  margin-bottom: 15px;
+}
+
+.penaltyInfHeader {
+  color: #828282;
+}
+
+td {
+  padding: 0;
+}
+
+.payButt {
+  background-color: #4e9f3d;
+}
+
+
+@media (max-width: 550px) {}

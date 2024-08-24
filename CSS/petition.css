@@ -1,0 +1,393 @@
+.menuPetition {
+  background-color: #212421;
+}
+
+.buttons {
+  display: flex;
+  grid-gap: 5px;
+}
+
+.button {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #212421;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+  transition: all 0.20s ease 0s;
+}
+
+.button:hover {
+  background-color: #1e5128;
+  cursor: pointer;
+}
+
+.currentButt {
+  background-color: #1e5128;
+}
+
+.newPetitionButt {
+  margin-top: 10px;
+  height: 130px;
+}
+
+.newPetitionButt:hover {
+  background-color: #2124217d;
+}
+
+.petition {
+  display: flex;
+  width: 100%;
+  height: 130px;
+  background-color: #212421;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.20s ease 0s;
+}
+
+.petition:hover {
+  background-color: #2124217d;
+}
+
+.petitionStyle {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.petitionImg {
+  min-width: 29%;
+  width: 29%;
+  height: auto;
+  border-radius: 10px 0 0 10px;
+  object-fit: cover;
+}
+
+.subPetition {
+  min-width: 29%;
+  width: 29%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subPetition div {
+  position: absolute;
+  font-size: 18px;
+  color: white;
+  background-color: rgba(78, 159, 61, 0.8);
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+.subPetition img {
+  width: 100%;
+  height: 100%;
+}
+
+.petitionHeader {
+  margin: 0;
+  color: white;
+  font-size: 25px;
+  display: flex;
+}
+
+.petitionBottomFlex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.petitionInf {
+  display: flex;
+  align-items: end;
+  color: white;
+  font-size: 16px;
+  margin-top: 25px;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-top: 30px;
+}
+
+progress {
+  -webkit-appearance: none;
+}
+
+.progress {
+  width: 180px;
+  height: 12px;
+}
+
+progress::-webkit-progress-bar {
+  border-radius: 10px;
+  background-color: #191a19;
+}
+
+progress[value]::-webkit-progress-val {
+  border-radius: 10px;
+  background-color: #4e9f3d;
+}
+
+.petitionSub {
+  color: #4e9f3d;
+  font-size: 18px;
+}
+
+.wind {
+  width: 35%;
+}
+
+.petitionPoleText {
+  height: 150px;
+  margin-top: 10px;
+}
+
+.addImg {
+  float: none;
+  text-align: center;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.warnCreate {
+  color: #828282;
+  margin-top: 5px;
+}
+
+#load {
+  width: 50%;
+  height: 50%;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+#fileWarnSize {
+  color: #B31312;
+}
+
+.parts {
+  display: flex;
+  grid-gap: 5px;
+}
+.part1 {
+  display: block;
+  width: 70%;
+}
+.part2 {
+  display: block;
+  width: 30%;
+}
+
+.petitionInfImg {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.petitionInfHeader {
+  display: flex;
+  align-items: center;
+  grid-gap: 5px;
+  font-size: 25px;
+  color: white;
+  margin: 0 0 5px 0;
+}
+
+.petitionInfWhy {
+  font-size: 18px;
+  color: #828282;
+  margin: 10px 0;
+}
+
+.petitionInfText {
+  font-size: 16px;
+  color: white;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.petitionInfBasement {
+  display: flex;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.userAvaInf {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  object-fit: cover;
+  margin-right: 5px;
+}
+
+.userAva {
+  width: 50px;
+  height: 50px;
+}
+
+.basementElement {
+  margin-top: 10px;
+}
+
+.counterInf {
+  background-color: #212421;
+  border-radius: 10px;
+  padding: 20px 10px;
+  margin-top: 45px;
+}
+
+.petitionInfSub {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progressPetitionInf {
+  width: 100%;
+  height: 12px;
+}
+
+.supportButt {
+  float: none;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.supportButtOff {
+  background-color: #212421;
+  cursor: not-allowed;
+}
+
+.answerButt {
+  float: none;
+  width: 100%;
+  text-align: center;
+  padding: 9px 0;
+  margin: 0;
+  margin-top: 5px;
+  background-color: #b31212b9;
+}
+
+.answerButt:hover {
+  background-color: #b3121276;
+}
+
+.answerForm {
+  margin-top: 10px;
+  background-color: #212421;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.answerBoolTrue, .answerBoolFalse {
+  padding: 9px 0;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.answerBoolTrue {
+  color: #4e9f3d;
+  border: 2px solid #4e9f3d;
+}
+
+.answerBoolFalse {
+  color: #b31212b9;
+  border: 2px solid #b31212b9;
+}
+
+.watchAnswerButt {
+  background-color: #4e9f3d;
+}
+
+.answerText {
+  color: white;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.headerBool {
+  width: 150px;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.clearContent {
+  color: #828282;
+}
+
+.clearContentButt {
+  float: none;
+  width: 25%;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 550px) {
+  .petition {
+    height: auto;
+  }
+
+  .petitionImg {
+    display: block;
+    float: none;
+    border-radius: 5px;
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+  }
+
+  .petitionHeader {
+    float: none;
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .petitionBr {
+    display: none;
+  }
+
+  .petitionInf {
+    float: none;
+    margin: 0;
+  }
+
+  progress {
+    position: static;
+    width: 100%;
+    margin: 5px 0 0 0;
+    float: none;
+  }
+
+  .petitionSub {
+    float: right;
+  }
+
+  .subMob {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+    bottom: 0;
+    left: 0;
+    background-color: #212421;
+    border: none;
+  }
+}

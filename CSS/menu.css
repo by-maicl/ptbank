@@ -1,0 +1,213 @@
+@import url('interface.css');
+
+.content {
+  display: block;
+  margin: 0 360px 0 605px;
+}
+
+.menu {
+  margin-left: 360px;
+  float: left;
+  width: 240px;
+}
+
+.menuButt {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+  padding: 15px 0;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.20s ease 0s;
+}
+
+.menuButt:hover {
+  background-color: #212421;
+}
+
+.menuIcon {
+  position: absolute;
+  text-indent: 10px;
+}
+
+.menuText {
+  margin: 0;
+  margin-left: 40px;
+}
+
+.profileRoleUser {
+  text-align: center;
+  color: #7ED7C1;
+  padding: 4px 10px;
+  border: 2px solid #7ED7C1;
+  border-radius: 10px;
+}
+
+.profileRoleAdmin {
+  color: #B31312;
+  border: 2px solid #B31312;
+}
+
+.profileRoleBank {
+  color: #9ADE7B;
+  border: 2px solid #9ADE7B;
+}
+
+.profileRoleModer {
+  color: #4CB9E7;
+  border: 2px solid #4CB9E7;
+}
+
+.mobMenuLox {
+  display: none;
+}
+
+#ava {
+  border-radius: 30px;
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+
+.version {
+  font-size: 14px;
+  color: #82828270;
+}
+
+.tabletMenu {
+  display: none;
+  float: left;
+  margin-left: 70px;
+  width: 55px;
+}
+
+.tabletMenuPart {
+  text-align: center;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.20s ease 0s;
+  padding: 10px 0;
+  margin-bottom: 3px;
+}
+
+.tabletMenuPart:hover {
+  background-color: #212421;
+}
+
+.tabletMenuIcon {
+  font-size: 20px;
+}
+
+.tabletMenuText {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    padding: 0;
+    margin: 0 70px 0 130px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .tabletMenu {
+    display: block;
+  }
+
+  .wind {
+    width: 60%;
+  }
+
+  .smallerWind {
+    width: 30%;
+  }
+}
+
+@media (max-width: 550px) {
+  .tabletMenu {
+    display: none;
+  }
+
+  .wind {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    top: 0;
+    position: fixed;
+    border-radius: 0;
+    margin: 0;
+    padding: 5px 0;
+  }
+
+  .windHeader {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .xmark {
+    display: none;
+  }
+
+  .xmarkPhone {
+    display: block;
+    font-size: 25px;
+    position: absolute;
+  }
+
+  .OK {
+    float: none;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+    margin-right: 5px;
+  }
+
+  .content {
+    display: block;
+    margin: 0 5px 60px 5px;
+    padding: 0;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .mobMenuLox {
+    display: block;
+    background-color: #1e5128;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  ul.mobMenuList {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    justify-content: space-between;
+  }
+
+  .mobMenuPart {
+    width: 20%;
+    padding: 12px;
+  }
+
+  .mobMenuHref {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+}

@@ -1,0 +1,721 @@
+.menuContent {
+  background-color: #212421;
+}
+
+.blocks {
+  display: flex;
+  flex-direction: row-reverse;
+  grid-gap: 10px;
+}
+
+.block1 {
+  display: block;
+}
+
+.sort {
+  width: 35%;
+  height: 100px;
+  background-color: #212421;
+  border-radius: 10px;
+  color: white;
+  padding: 5px;
+}
+
+.sortBlock {
+  background-color: #212421;
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+}
+
+.sortStyle {
+  padding: 10px;
+}
+
+.sortHeader {
+  margin: 0;
+  font-size: 18px;
+}
+
+.sortImg {
+  width: 100%;
+  height: inherit;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.postEditFile {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+#upload div {
+  position: relative;
+}
+
+#upload input[type=file] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  position: absolute;
+  z-index: -10;
+}
+
+.newPost {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background-color: #212421;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.newPost:target {
+  height: 100px;
+}
+
+.newPostStyle {
+  padding: 15px 10px;
+  display: flex;
+}
+
+.newPostPole {
+  margin-top: 5px;
+  text-indent: 0;
+}
+
+.newPostPole:focus {
+  outline: none;
+}
+
+.newPostSend {
+  font-size: 25px;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.newPostSend:hover {
+  color: #1e5128;
+}
+
+.post {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.postStyle {
+  background-color: #212421;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.balls {
+  float: right;
+  font-size: 20px;
+}
+
+.balls i {
+  color: #828282;
+  transition: all 0.20s ease 0s;
+}
+
+.balls i:hover {
+  color: #545454;
+  cursor: pointer;
+}
+
+.postDown {
+  display: flex;
+  justify-content: space-between;
+}
+
+#like {
+  background-color: rgba(28, 28, 28, 0);
+  border: none;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+#like i:hover {
+  cursor: pointer;
+  color: #1e5128;
+  transition: all 0.20s ease 0s;
+}
+
+.likes-count {
+  color: white;
+  font-size: 20px;
+}
+
+.additButt {
+  font-size: 18px;
+}
+
+.button {
+  display: none;
+}
+
+#but_new1 {
+  position: absolute;
+  margin-top: 15px;
+  right: 50px;
+}
+
+#but_new2 {
+  position: absolute;
+  right: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.but_new i {
+  font-size: 30px;
+  transition: all 0.20s ease 0s;
+}
+
+#but_new1:hover {
+  color: #1e5128;
+  cursor: pointer;
+}
+
+#but_new2:hover {
+  color: #1e5128;
+}
+
+#but_new3:hover {
+  color: #1e5128;
+}
+
+.windBack {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.windBack:target {
+  display: block;
+  z-index: 9999;
+}
+
+.wind {
+  width: 35%;
+  height: auto;
+  max-height: 80%;
+  position: relative;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  top: 10%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: #212421;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.windHeader {
+  font-size: 20px;
+  margin: 0;
+  color: white;
+}
+
+#postDo {
+  width: 15%;
+  top: 20%;
+  padding: 10px;
+}
+
+.postDoButt {
+  width: 100%;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px 0;
+  border-radius: 10px;
+  transition: all 0.20s ease 0s;
+}
+
+.postDoButt:hover {
+  background-color: #191a19;
+}
+
+.postDoButtStyle {
+  padding-left: 10px;
+}
+
+.postDoHr {
+  margin: 0;
+}
+
+.postUserLikeBlock {
+  display: flex;
+  padding: 5px;
+  border-radius: 10px;
+  transition: all 0.20s ease 0s;
+}
+
+.postUserLikeBlock:hover {
+  background-color: #191a19;
+}
+
+.postUserLike {
+  color: white;
+  font-size: 18px;
+  margin: 0;
+  margin-top: 15px;
+}
+
+.noLikes {
+  color: #828282;
+  margin: 0;
+}
+
+.noLikes i {
+  font-size: 50px;
+  margin-top: 10px;
+  color: #828282;
+}
+
+.watch_comm {
+  color: #828282;
+  transition: all 0.20s ease 0s;
+}
+
+.watch_comm:hover {
+  color: #545454;
+  cursor: pointer;
+}
+
+.xmark {
+  float: right;
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.xmark i:hover {
+  color: #1e5128;
+  transition: all 0.20s ease 0s;
+}
+
+.OK {
+  background-color: #4e9f3d;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 15px;
+  transition: all 0.20s ease 0s;
+  float: right;
+}
+
+.OK:hover {
+  background-color: #1e5128;
+  cursor: pointer;
+}
+
+.buttonsDel {
+  display: flex;
+  justify-content: center;
+}
+
+.buttDel {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #191a19;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.20s ease 0s;
+}
+
+.buttDel:hover {
+  background-color: #1e5128;
+}
+
+.last {
+  margin-left: 5px;
+}
+
+.post_text {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  margin-top: 10px;
+  color: white;
+  font-size: 16px;
+}
+
+.comm {
+  display: block;
+  height: inherit;
+}
+
+#pole_comm {
+  width: 100%;
+  background-color: #191a19;
+  border-radius: 10px;
+  height: auto;
+  padding: 10px 0;
+  text-indent: 10px;
+}
+
+.post_file {
+  width: 100%;
+  height: auto;
+  max-height: 50vh;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#postFile {
+  margin-top: 10px;
+}
+
+#avaPost,
+.avaNewPost {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  float: left;
+  margin-right: 5px;
+  object-fit: cover;
+}
+
+#ava_comm {
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  float: left;
+  margin-right: 5px;
+  object-fit: cover;
+}
+
+#commDel {
+  color: #828282;
+  float: right;
+  margin-top: 0;
+}
+
+#commDel:hover {
+  color: #a00000;
+  cursor: pointer;
+}
+
+#load img {
+  width: auto;
+  max-width: 100%;
+  max-height: 250px;
+  border-radius: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.commParts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.commPart1 {
+  width: 100%;
+  display: flex;
+}
+
+.commButtSent {
+  border: none;
+  background-color: #212421;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.commButtSent i {
+  transition: all 0.20s ease 0s;
+}
+
+.commButtSent i:hover {
+  color: #1e5128;
+}
+
+.commText {
+  margin: 0;
+  color: white;
+  font-size: medium;
+}
+
+.commTextAnswer {
+  margin-left: 45px;
+}
+
+.commDate {
+  color: #828282;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.commBlock {
+  display: flex;
+}
+
+.commDo {
+  margin-left: 45px;
+  color: #828282;
+  font-size: medium;
+}
+
+.commAnswerHeader {
+  margin-top: 5px;
+  cursor: pointer;
+  transition: all 0.20s ease 0s;
+}
+
+.commAnswerHeader:hover {
+  color: #545454;
+}
+
+.commAnswerHeader2 {
+  margin-left: 45px;
+}
+
+.commAnswer {
+  margin: 0;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.20s ease 0s;
+}
+
+.commAnswer:hover {
+  color: #545454;
+}
+
+.commAnswerParts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.commAnswerPart1 {
+  width: 100%;
+  display: flex;
+}
+
+.xmarkPhone {
+  display: none;
+}
+
+.buttUp {
+  border: none;
+  border-radius: 10px;
+  background-color: #212421;
+  width: 75%;
+  padding: 10px 0;
+  color: white;
+  font-size: 18px;
+}
+
+.buttUp:hover {
+  background-color: #1e5128;
+  cursor: pointer;
+}
+
+.mobHr {
+  display: none;
+}
+
+.ballsMob {
+  display: none;
+}
+
+.postDateMob {
+  display: none;
+}
+
+hr {
+  margin: 10px 0;
+}
+
+@media (max-width: 1440px) {}
+
+@media (max-width: 992px) {
+  .sort {
+    display: none;
+  }
+
+  .block1 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .invBr {
+    display: none;
+  }
+
+  .blocks {
+    display: block;
+  }
+
+  .sort {
+    display: none;
+  }
+
+  .block1 {
+    width: 100%;
+  }
+
+  .post {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .postStyle {
+    padding: 10px;
+  }
+
+  #postFile {
+    margin-top: 5px;
+  }
+
+  .wind {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    top: 0;
+    position: fixed;
+    border-radius: 0;
+    margin: 0;
+    padding: 5px 0;
+  }
+
+  .windHeader {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #postDo {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    border-radius: 10px 10px 0 0;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  .postUserLike {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  #editPostPole {
+    margin: 0;
+    text-indent: 10px;
+  }
+
+  .xmark {
+    display: none;
+  }
+
+  .xmarkPhone {
+    display: block;
+    font-size: 25px;
+    position: absolute;
+  }
+
+  .OK {
+    float: none;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+    margin-right: 5px;
+  }
+
+  .buttUp {
+    width: 100%;
+  }
+
+  .mobHr {
+    display: block;
+  }
+
+  .balls {
+    display: none;
+  }
+
+  .ballsMob {
+    display: block;
+  }
+
+  #avaPost {
+    width: 35px;
+    height: 35px;
+    float: none;
+  }
+
+  .avaNewPost {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  #ava_comm {
+    width: 35px;
+    height: 35px;
+  }
+
+  .postFrom {
+    font-size: 16px;
+    margin-top: 6px;
+    float: right;
+  }
+
+  .postDate {
+    display: none;
+  }
+
+  .postDateMob {
+    display: block;
+    margin-top: 8px;
+    margin-left: 5px;
+    font-size: 14px;
+  }
+
+  .postHeaderMob {
+    display: flex;
+  }
+
+  .postHeader2Mob {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .comm p {
+    font-size: 15px;
+  }
+
+  .commDo {
+    margin-left: 40px;
+  }
+}
