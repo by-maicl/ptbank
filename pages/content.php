@@ -102,7 +102,7 @@ else: ?>
                                 </div>
                             </div>
                             <?php if ($role['role'] == 'admin' && isset($post['post_complaint']) || $role['role'] == 'moder' && isset($post['post_complaint'])): ?>
-                                <div class="postMoreInfo postComplaint">
+                                <div class="postMoreInfo postComplaint" title="Скарги на публікацію">
                                     <i class="fa-solid fa-circle-exclamation"></i> <?= $post['post_complaint'] ?>
                                 </div>
                             <?php endif; ?>
@@ -197,52 +197,61 @@ else: ?>
                             </details>
                         </div>
 
-                        <div class="windBack" id="p-<?= $post['post_id'] ?>"> <!-- Дії з публікацією -->
+
+                        <div class="windBack" id="p-<?= $post['post_id'] ?>"> <!-- Дії над публікацією -->
                             <div class="wind smallerWind">
-                                <button class="button postInfoButt"
-                                    onclick="self.location = '#p-like-<?= $post['post_id'] ?>'"><i
-                                        class="fa-solid fa-heart"></i>
-                                    Вподобайки</button>
-                                <?php if ($role['role'] == 'admin' || $role['role'] == 'moder' || $post['post_from'] == $_COOKIE['user']): ?>
-                                    <button class="button postInfoButt"
-                                        onclick="self.location = '#p-edit-<?= $post['post_id'] ?>'"><i
-                                            class="fa-solid fa-pen-to-square"></i>
-                                        Змінити</button>
-                                    <button class="button postInfoButt"
-                                        onclick="self.location = '#p-del-<?= $post['post_id'] ?>'"><i
-                                            class="fa-solid fa-trash-can"></i>
-                                        Видалити</button>
-                                <?php endif; ?>
-                                <button class="button postInfoButt"
-                                    onclick="self.location = '#p-complaint-<?= $post['post_id'] ?>'"><i
-                                        class="fa-solid fa-circle-exclamation"></i>
-                                    Поскаржитись</button>
-                                <hr color="#414141" class="postInfoHr">
-                                <button class="button postInfoButt" onclick="self.location = '#<?= $post['post_id'] ?>'"><i
-                                        class="fa-solid fa-arrow-left"></i>
-                                    Назад</button>
+                                <div class="wind-mobile">
+                                    <div class="close-wind-line" onclick="self.location = '#'"></div>
+                                    <button class="button-grey1 postInfoButt"
+                                        onclick="self.location = '#p-like-<?= $post['post_id'] ?>'"><i
+                                            class="fa-solid fa-heart"></i>
+                                        Вподобайки</button>
+                                    <?php if ($role['role'] == 'admin' || $role['role'] == 'moder' || $post['post_from'] == $_COOKIE['user']): ?>
+                                        <button class="button-grey1 postInfoButt"
+                                            onclick="self.location = '#p-edit-<?= $post['post_id'] ?>'"><i
+                                                class="fa-solid fa-pen-to-square"></i>
+                                            Змінити</button>
+                                        <button class="button-grey1 postInfoButt"
+                                            onclick="self.location = '#p-del-<?= $post['post_id'] ?>'"><i
+                                                class="fa-solid fa-trash-can"></i>
+                                            Видалити</button>
+                                    <?php endif; ?>
+                                    <button class="button-grey1 postInfoButt"
+                                        onclick="self.location = '#p-complaint-<?= $post['post_id'] ?>'"><i
+                                            class="fa-solid fa-circle-exclamation"></i>
+                                        Поскаржитись</button>
+                                    <hr color="#414141" class="postInfoHr">
+                                    <button class="button-grey1 postInfoButt postButtBack"
+                                        onclick="self.location = '#<?= $post['post_id'] ?>'"><i
+                                            class="fa-solid fa-arrow-left"></i>
+                                        Назад</button>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="windBack" id="p-like-<?= $post['post_id'] ?>"> <!-- Лайки на публікації -->
+                        <div class="windBack" id="p-like-<?= $post['post_id'] ?>"> <!-- Вподобайки -->
                             <div class="wind smallerWind">
-                                <?php
-                                $postLikes = mysqli_query($mysql, "SELECT * FROM `likes` WHERE `object_id` = '$post[post_id]'");
-                                foreach ($postLikes as $postLikesVar):
-                                    $userLikeInfo = mysqli_fetch_assoc(mysqli_query($mysql, "SELECT * FROM `user` WHERE `login` = '$postLikesVar[username]'"));
-                                    ?>
-                                    <button class="button postInfoButt postInfoLikeUser"
-                                        onclick="self.location = 'page.php?login=<?= $postLikesVar['username'] ?>'">
-                                        <img src="ava_user/<?= $userLikeInfo['ava'] ?>"
-                                            class="userAva userAvaComment"><?= $postLikesVar['username'] ?>
-                                    </button>
+                                <div class="wind-mobile">
+                                    <div class="close-wind-line" onclick="self.location = '#'"></div>
                                     <?php
-                                endforeach;
-                                ?>
-                                <hr color="#414141" class="postInfoHr">
-                                <button class="button postInfoButt" onclick="self.location = '#p-<?= $post['post_id'] ?>'"><i
-                                        class="fa-solid fa-arrow-left"></i>
-                                    Назад</button>
+                                    $postLikes = mysqli_query($mysql, "SELECT * FROM `likes` WHERE `object_id` = '$post[post_id]'");
+                                    foreach ($postLikes as $postLikesVar):
+                                        $userLikeInfo = mysqli_fetch_assoc(mysqli_query($mysql, "SELECT * FROM `user` WHERE `login` = '$postLikesVar[username]'"));
+                                        ?>
+                                        <button class="button-grey1 postInfoButt postInfoLikeUser"
+                                            onclick="self.location = 'page.php?login=<?= $postLikesVar['username'] ?>'">
+                                            <img src="ava_user/<?= $userLikeInfo['ava'] ?>"
+                                                class="userAva userAvaComment"><?= $postLikesVar['username'] ?>
+                                        </button>
+                                        <?php
+                                    endforeach;
+                                    ?>
+                                    <hr color="#414141" class="postInfoHr">
+                                    <button class="button-grey1 postInfoButt postButtBack"
+                                        onclick="self.location = '#p-<?= $post['post_id'] ?>'"><i
+                                            class="fa-solid fa-arrow-left"></i>
+                                        Назад</button>
+                                </div>
                             </div>
                         </div>
 
@@ -266,32 +275,42 @@ else: ?>
 
                         <div class="windBack" id="p-del-<?= $post['post_id'] ?>"> <!-- Видалення публікації -->
                             <div class="wind smallerWind">
-                                <div class="windHeader" align="center">Видалити публікацію?</div>
-                                <form action="php/delPost.php" method="post">
-                                    <div class="buttonDelPost">
-                                        <button type="submit" class="OK"><i class="fa-solid fa-check"></i> Так</button>
-                                        <input type="hidden" name="postId" value="<?= $post['post_id'] ?>" required readonly>
-                                        <button type="reset" class="OK" onclick="self.location='#p-<?= $post['post_id'] ?>'"><i
-                                                class="fa-solid fa-xmark"></i>
-                                            Ні</button>
-                                    </div>
-                                </form>
+                                <div class="wind-mobile">
+                                    <div class="close-wind-line" onclick="self.location = '#'"></div>
+                                    <h2 class="wind-header small-wind-header">Видалити публікацію?</h2>
+                                    <form action="php/delPost.php" method="post">
+                                        <div class="buttons-confirm">
+                                            <input type="hidden" name="postId" value="<?= $post['post_id'] ?>" required
+                                                readonly>
+                                            <button type="submit" class="button-grey2 OK"><i class="fa-solid fa-check"></i>
+                                                Так</button>
+                                            <button type="reset" class="button-grey2 OK" onclick="self.location = '#'"><i
+                                                    class="fa-solid fa-xmark"></i> Ні</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
 
+
+
                         <div class="windBack" id="p-complaint-<?= $post['post_id'] ?>"> <!-- Скарга на публікацію -->
                             <div class="wind smallerWind">
-                                <div class="windHeader" align="center">Поскаржитись на публікацію?</div>
-                                <p class="complaintInfo">Адміністрація побачить вашу скаргу й прийме міри</p>
-                                <form action="php/complaint.php" method="post">
-                                    <div class="buttonDelPost">
-                                        <button type="submit" class="OK"><i class="fa-solid fa-check"></i> Так</button>
-                                        <input type="hidden" name="postId" value="<?= $post['post_id'] ?>" readonly required>
-                                        <button type="reset" class="OK" onclick="self.location='#p-<?= $post['post_id'] ?>'"><i
-                                                class="fa-solid fa-xmark"></i>
-                                            Ні</button>
-                                    </div>
-                                </form>
+                                <div class="wind-mobile">
+                                    <div class="close-wind-line" onclick="self.location = '#'"></div>
+                                    <h2 class="wind-header small-wind-header">Поскаржитись на публікацію?</h2>
+                                    <p class="complaintInfo">Адміністрація побачить вашу скаргу й прийме міри</p>
+                                    <form action="php/complaint.php" method="post">
+                                        <div class="buttons-confirm">
+                                            <input type="hidden" name="postId" value="<?= $post['post_id'] ?>" required
+                                                readonly>
+                                            <button type="submit" class="button-grey2 OK"><i class="fa-solid fa-check"></i>
+                                                Так</button>
+                                            <button type="reset" class="button-grey2 OK" onclick="self.location = '#'"><i
+                                                    class="fa-solid fa-xmark"></i> Ні</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
 
@@ -304,7 +323,7 @@ else: ?>
                     <div class="supportWind">
                         <p class="supportText">Виникли якісь проблеми?</p>
                         <a href="https://discord.com/channels/957640005650620416/1091764023546089512" target="_blank">
-                            <button class="button supportButt">Зв'язок з адміністрацією</button>
+                            <button class="button-green supportButt">Зв'язок з адміністрацією</button>
                         </a>
                     </div>
                 </div>

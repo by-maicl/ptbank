@@ -32,7 +32,25 @@ function toggle(el) {
   el.style.display = (el.style.display == 'none') ? 'block' : 'none';
 }
 
-function openNotif(el) {
+function openWindow(el) {
   let elName = document.getElementById(el);
-  elName.classList.toggle('open');
+  let isOpen = elName.classList.toggle('open');
+
+  document.removeEventListener('click', handleClickOutside);
+
+  if (isOpen) {
+    setTimeout(() => {
+      document.addEventListener('click', handleClickOutside);
+    }, 0);
+  }
+
+  function handleClickOutside(event) {
+    if (!elName.contains(event.target)) {
+      elName.classList.remove('open');
+      document.removeEventListener('click', handleClickOutside);
+    }
+  }
 }
+
+
+

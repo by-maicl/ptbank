@@ -27,14 +27,6 @@
     outline: none;
 }
 
-.universal-box {
-    width: 100%;
-    height: auto;
-    background-color: #212421;
-    border-radius: 10px;
-    position: relative;
-}
-
 .card-box {
     display: flex;
     grid-gap: 10px;

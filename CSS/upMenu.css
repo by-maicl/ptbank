@@ -26,17 +26,33 @@
 
 .upMenuInf {
   display: flex;
-  grid-gap: 10px;
+  grid-gap: 15px;
+  align-items: center;
 }
 
-.notifBell {
-  font-size: 23px;
+.notif-elements {
+  position: relative;
   cursor: pointer;
 }
 
-.notifBell i:hover {
+.notif-bell {
+  font-size: 25px;
+}
+
+.notif-bell:hover {
   color: #1e5128;
   transition: all 0.20s ease 0s;
+}
+
+.unread-notif-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #1e5128;
+  border: 2px solid #191a19;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .ava {
@@ -53,12 +69,12 @@
   opacity: 0.6;
 }
 
-.windNotif {
+.wind-notif {
   display: none;
-  width: 23%;
-  height: 55%;
+  width: 25%;
+  height: 60%;
   position: absolute;
-  right: 360px;
+  right: 390px;
   top: 50px;
   background-color: #212421;
   border-radius: 10px;
@@ -68,81 +84,71 @@
   font-size: 16px;
 }
 
-.windNotifHeader {
-  padding: 10px;
-}
-
-.windNotifElement {
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-}
-
-.windNotifElement:hover {
-  background-color: #191a19;
-}
-
-.windNotifElementStyle {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-.windNotifUserInf {
-  display: flex;
-}
-
-.notifAva {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  object-fit: cover;
-}
-
-.notifImg {
-  width: 70px;
-  border-radius: 10px;
-}
-
-.windUser {
-  width: 10%;
-  height: auto;
-  padding: 10px;
-}
-
-.windUserButt {
-  width: 100%;
-  padding: 10px 0;
-  border: none;
-  border-radius: 10px;
-  background-color: #191a19;
+.wind-notif-header {
   color: white;
-  font-size: 16px;
+  margin: 10px;
+  font-size: 18px;
+}
+
+.wind-notif-el {
+  display: flex;
+  grid-gap: 5px;
+  padding: 10px;
   cursor: pointer;
   transition: all 0.20s ease 0s;
-  margin-bottom: 5px;
+}
+
+.wind-notif-el:hover {
+  background-color: #191a19;
+}
+
+.wind-notif-info {
+  width: 70%;
+}
+
+.wind-notif-date {
+  font-size: 14px;
+  color: #828282;
+  margin-top: 5px;
+}
+
+.wind-notif-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  position: absolute;
+  right: 10px;
+}
+
+.wind-notif-icon {
+  font-size: 35px;
+  text-align: center;
+}
+
+.wind-user {
+  width: 10%;
+  height: auto;
+  right: 360px;
+  padding: 10px;
+}
+
+.wind-user-butt {
+  text-align: start;
+  margin-top: 5px;
+}
+
+.wind-user-butt:first-child {
+  margin: 0;
 }
 
 .windUserButt:hover {
   background-color: #1e5128;
 }
 
-.windUserButt:last-child {
-  margin-bottom: 0;
-}
-
-.windUserIcon {
-  position: absolute;
-  margin-left: 10px;
-  margin-top: 2px;
-}
-
-.windUserText {
-  margin-left: 35px;
-}
-
 .open {
   display: block;
+  z-index: 100;
 }
 
 @media (max-width: 1024px) {

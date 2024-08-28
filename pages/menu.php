@@ -1,6 +1,6 @@
 <?php
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-include ("../connect.php");
+include("../connect.php");
 
 if ($_COOKIE['user'] == '') {
   echo "<script>self.location='/index.php';</script>";
@@ -58,10 +58,11 @@ if ($_COOKIE['user'] == '') {
         </div>
       </a>
       <div class="upMenuInf">
-        <div class="notifBell" onclick="openNotif('notification')">
-          <i class="fa-solid fa-bell"></i>
+        <div class="notif-elements" onclick="openWindow('notification')">
+          <i class="fa-solid fa-bell notif-bell" id="loadNotification"></i>
+          <div class="unread-notif-dot"></div>
         </div>
-        <img src="ava_user/<?= $role['ava'] ?>" class="ava" onclick="openNotif('user')">
+        <img src="ava_user/<?= $role['ava'] ?>" class="ava" onclick="openWindow('user')">
       </div>
     </div>
 
@@ -69,7 +70,7 @@ if ($_COOKIE['user'] == '') {
       <ul>
         <a href="page.php?login=<?= $_COOKIE['user'] ?>">
           <li class="menuButt menuPage"><i class="fa-solid fa-user menuIcon"></i>
-            <font class="menuText">Моя сторінка</font>
+            <font class="menuText">Профіль</font>
           </li>
         </a>
         <a href="content.php">
@@ -121,7 +122,7 @@ if ($_COOKIE['user'] == '') {
             break;
         }
         ?>
-        <p align="center" class="version">beta v2.0</p>
+        <p align="center" class="version">v2.1</p>
       </ul>
     </div>
 
@@ -160,42 +161,91 @@ if ($_COOKIE['user'] == '') {
       </ul>
     </div>
 
-    <div class="mobMenuLox"> <!--Меню для тел-->
-      <ul class="mobMenuList">
-        <li class="mobMenuPart"><a href="content.php" class="mobMenuHref"><i class="fa-solid fa-house"></i></a></li>
-        <li class="mobMenuPart"><a href="petition.php" class="mobMenuHref"><i class="fa-solid fa-check-to-slot"></i></a>
+    <div class="mobile-menu">
+      <ul class="mobile-menu-list">
+        <a href="content.php">
+          <li class="mobile-menu-part">
+            <i class="fa-solid fa-house"></i>
+            <p class="mobile-menu-text">Головна</p>
+          </li>
+        </a>
+        <a href="bank.php?cId=<?= $bank['card_id'] ?>">
+          <li class="mobile-menu-part">
+            <i class="fa-solid fa-building-columns"></i>
+            <p class="mobile-menu-text">Банк</p>
+          </li>
+        </a>
+        <a href="petition.php">
+          <li class="mobile-menu-part">
+            <i class="fa-solid fa-check-to-slot"></i>
+            <p class="mobile-menu-text">Петиції</p>
+          </li>
+        </a>
+        <a href="search.php">
+          <li class="mobile-menu-part">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <p class="mobile-menu-text">Пошук</p>
+          </li>
+        </a>
+        <li class="mobile-menu-part">
+          <i class="fa-solid fa-bars"></i>
+          <p class="mobile-menu-text">Ще</p>
         </li>
-        <li class="mobMenuPart"><a href="bank.php" class="mobMenuHref"><i class="fa-solid fa-building-columns"></i></a>
-        </li>
-        <li class="mobMenuPart"><a href="players.php" class="mobMenuHref"><i class="fa-solid fa-users"></i></a></li>
-        <li class="mobMenuPart"><a href="page.php?login=<?= $_COOKIE['user'] ?>" class="mobMenuHref"><img
-              src="ava_user/<?= $role['ava'] ?>" width="25px" height="25px" id="ava"></a></li>
       </ul>
     </div>
 
-    <div class="windNotif" id="notification">
-      <p class="windNotifHeader">Сповіщення</p>
+    <div class="wind-notif" id="notification">
+      <p class="wind-notif-header">Сповіщення</p>
       <hr color="#414141">
-      <div class="windNotifElement">
-        <div class="windNotifElementStyle">
-          <div class="windNotifUserInf">
-            <img src="ava_user/ava_user.png" class="notifAva">
-            <p class="notifText"><b>Username</b><br>Текст сповіщення</p>
-          </div>
-          <img src="petition_file/Screenshot_2.png" class="notifAva notifImg">
+
+      <div id="notifOutput"></div>
+
+      <!-- <div class="wind-notif-el" id="notification">
+        <img src="ava_user/ava_user.png" class="user-ava">
+        <div class="wind-notif-info">
+          <p><b>Maicl_GraB</b> вподобав(-ла) ваш допис</p>
+          <p class="wind-notif-date">12:36 27.08.2024</p>
         </div>
+        <img src="post_file/photo_2024-08-26_19-58-17.jpg" class="wind-notif-img">
       </div>
+
+      <div class="wind-notif-el">
+        <img src="ava_user/ava_user.png" class="user-ava">
+        <div class="wind-notif-info">
+          <p><b>Maicl_GraB</b> коментує ваш допис: Ахалай махалай</p>
+          <p class="wind-notif-date">12:36 27.08.2024</p>
+        </div>
+        <img src="post_file/photo_2024-08-26_19-58-17.jpg" class="wind-notif-img">
+      </div>
+
+      <div class="wind-notif-el">
+        <i class="fa-solid fa-check-to-slot user-ava wind-notif-icon"></i>
+        <div class="wind-notif-info">
+          <p>Оновлення статусу вашої петиції</p>
+          <p class="wind-notif-date">12:36 27.08.2024</p>
+        </div>
+        <img src="post_file/photo_2024-08-26_19-58-17.jpg" class="wind-notif-img">
+      </div>
+
+      <div class="wind-notif-el">
+        <i class="fa-solid fa-check-to-slot user-ava wind-notif-icon"></i>
+        <div class="wind-notif-info">
+          <p>Оновлення статусу підписаної вами петиції</p>
+          <p class="wind-notif-date">12:36 27.08.2024</p>
+        </div>
+        <img src="post_file/photo_2024-08-26_19-58-17.jpg" class="wind-notif-img">
+      </div> -->
+
     </div>
 
-    <div class="windNotif windUser" id="user">
-      <div class="windUserButt" onclick="self.location='page.php?login=<?= $_COOKIE['user'] ?>'"><i
-          class="fa-solid fa-user windUserIcon"></i>
-        <font class="windUserText">Моя сторінка</font>
-      </div>
-      <div class="windUserButt" onclick="self.location='/validatoin-form/exit.php'"><i
-          class="fa-solid fa-door-open windUserIcon"></i>
-        <font class="windUserText">Вийти</font>
-      </div>
+    <div class="wind-notif wind-user" id="user">
+      <button class="button-grey2 wind-user-butt" onclick="self.location='page.php?login=<?= $_COOKIE['user'] ?>'"><i
+          class="fa-solid fa-user"></i> Профіль</button>
+      <button class="button-grey2 wind-user-butt"
+        onclick="self.location='page.php?login=<?= $_COOKIE['user'] ?>#settings'"><i class="fa-solid fa-gear"></i>
+        Налаштування</button>
+      <button class="button-grey2 wind-user-butt" onclick="self.location='/validatoin-form/exit.php'"><i
+          class="fa-solid fa-door-open"></i> Вийти</button>
     </div>
 
     <?php
@@ -209,6 +259,24 @@ if ($_COOKIE['user'] == '') {
       unset($_SESSION['error']);
     }
     ?>
+
+    <script>
+      // // Завантаження сповіщень
+      // document.getElementById("loadNotification").addEventListener("click", function () {
+      //   // Створюємо AJAX-запит
+      //   var xhr = new XMLHttpRequest();
+      //   xhr.open("GET", "php/get-notification.php", true);
+      //   xhr.onload = function () {
+      //     if (xhr.status == 200) {
+      //       // Виводимо отримані дані у div з id="output"
+      //       document.getElementById("notifOutput").innerHTML = xhr.responseText;
+      //     } else {
+      //       document.getElementById("notifOutput").innerHTML = "Помилка завантаження даних";
+      //     }
+      //   };
+      //   xhr.send();
+      // });
+    </script>
 
   </body>
 
