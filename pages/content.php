@@ -106,6 +106,7 @@ else: ?>
                                     <i class="fa-solid fa-circle-exclamation"></i> <?= $post['post_complaint'] ?>
                                 </div>
                             <?php endif; ?>
+
                             <i class="fa-solid fa-ellipsis postMoreInfo"
                                 onclick="self.location = '#p-<?= $post['post_id'] ?>'"></i>
 

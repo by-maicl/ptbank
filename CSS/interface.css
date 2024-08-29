@@ -178,6 +178,17 @@ input::-webkit-inner-spin-button {
     overflow-x: hidden;
     overflow-y: auto;
     z-index: 1000;
+    animation: wind 0.1s linear forwards;
+}
+
+@keyframes wind {
+    from {
+        transform: scale(0.1);
+    }
+
+    to {
+        transform: scale(1);
+    }
 }
 
 .smallerWind {

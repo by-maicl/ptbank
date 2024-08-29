@@ -104,11 +104,9 @@ if ($_COOKIE['user'] == '') {
           </div>
 
           <a href="">
-            <div class="gradient-border">
-              <div class="lives-in universal-box">
-                <img src="../images/slide-show/1.png" class="user-ava">
-                <p class="city-name"><b>Шиза-сіті</b></p>
-              </div>
+            <div class="lives-in universal-box">
+              <img src="../images/slide-show/1.png" class="user-ava">
+              <p class="city-name"><b>Шиза-сіті</b></p>
             </div>
           </a>
 
@@ -197,32 +195,47 @@ if ($_COOKIE['user'] == '') {
                 <?php
                 if (empty($profileLinkInfoMore)) {
                   echo '<p align="center" class="windNoLinks">Ви ще нічого не додали сюди<br><i class="fa-solid fa-link-slash"></i></p>';
+                } else {
+
+                $linkSql = mysqli_query($mysql, "SELECT * FROM `user_link` WHERE `login` = '$_COOKIE[user]' ORDER BY `id` DESC");
+                if ($linkSql->num_rows > 0) {
+                  while($row = $linkSql->fetch_assoc()) {
+                      $linkInfo[] = $row;
+                  }
                 }
-                foreach ($profileLinkInfo as $profileLink):
+
+                for ($i = 0; $i < count($linkInfo); $i++):
                   ?>
-                  <details id="<?= $profileLink['id'] ?>">
+                  <details id="<?= $linkInfo[$i]['id'] ?>">
                     <summary class="windLinkSettings">
-                      <?= printLink($profileLink['link_url']); ?>
+                      <?= printLink($linkInfo[$i]['link_url']); ?>
                       <div>
-                        <?= $profileLink['link_name'] ?><br>
-                        <?= $profileLink['link_url'] ?>
+                        <?= $linkInfo[$i]['link_name'] ?><br>
+                        <?= $linkInfo[$i]['link_url'] ?>
                       </div>
                     </summary>
                     <div class="windLinksInput">
-                      <label class="button linkDelButt">
-                        <input onclick="toggle(document.getElementById('<?= $profileLink['id'] ?>'))" type="checkbox"
-                          name="linkDel-<?= $profileLink['id'] ?>" class="invInput"><i class="fa-solid fa-trash-can"></i>
+                      
+                      <label class="button-grey2 link-del-butt">
+                        <input type="checkbox" name="linkDel-<?= $i + 1 ?>" value="<?= $linkInfo[$i]['id'] ?>"
+                          style="display:none;" onclick="hideElement(<?= $linkInfo[$i]['id'] ?>)">
+                        <i class="fa-solid fa-trash-can"></i>
                       </label>
-                      <input type="text" name="linkName-<?= $profileLink['id'] ?>" placeholder="Введіть назву посилання"
-                        class="pole1 inputLink" value="<?= $profileLink['link_name'] ?>" maxlength="250" required>
-                      <input type="url" name="url-<?= $profileLink['id'] ?>" placeholder="Вставте посилання"
-                        class="pole1 inputLink" value="<?= $profileLink['link_url'] ?>" maxlength="250" required>
-                    </div>
+
+                      <input type="text" name="linkName-<?= $i + 1 ?>" placeholder="Введіть назву посилання"
+                        class="pole1 inputLink" value="<?= $linkInfo[$i]['link_name'] ?>" maxlength="250" required>
+
+                      <input type="url" name="linkUrl-<?= $i + 1 ?>" placeholder="Вставте посилання"
+                        class="pole1 inputLink" value="<?= $linkInfo[$i]['link_url'] ?>" maxlength="250" required>
+
+                      <input type="hidden" name="linkId-<?= $i + 1 ?>" value="<?= $linkInfo[$i]['id'] ?>" readonly required>
+                    
+                      </div>
                     <hr color="#414141">
                   </details>
-                <?php endforeach; ?>
+                <?php endfor; }?>
 
-                <details id="link">
+                <details id="link"> <!-- Нове посилання -->
                   <?php if (empty($profileLinkInfoMore)) {
                     echo '<summary class="OK windLinkNew windLinkNewEmpty">Додати посилання</summary>';
                   } else {
@@ -291,8 +304,11 @@ if ($_COOKIE['user'] == '') {
         displayImage('ava-load', 'ava-preview', 'fileWarnSize');
       });
 
-      function toggle(el) {
-        el.style.display = (el.style.display == 'none') ? 'block' : 'none';
+      function hideElement(el) {
+        let element = document.getElementById(el);
+        element.style.display = (element.style.display == 'none') ? 'block' : 'none';
+
+        showPopUp("<i class='fa-solid fa-circle-check'></i> Посилання успішно видалено!");
       }
 
     </script>

@@ -45,7 +45,7 @@
 .profileHref {
   position: absolute;
   display: flex;
-  grid-gap: 2px;
+  grid-gap: 4px;
   margin-left: 80px;
   font-size: 20px;
 }
@@ -84,21 +84,15 @@
   margin-top: 5px;
 }
 
-.gradient-border {
-  margin-top: 5px;
-  position: relative;
-  background: rgb(122, 28, 172);
-  background: linear-gradient(90deg, rgba(122, 28, 172, 0.897) 0%, rgba(46, 7, 63, 1) 100%);
-  border-radius: 10px;
-}
-
 .lives-in {
   display: flex;
   justify-content: center;
   align-items: center;
   grid-gap: 5px;
+  margin-top: 5px;
   color: #fff;
-  background-color: transparent;
+  background: rgb(122, 28, 172);
+  background: linear-gradient(90deg, rgba(122, 28, 172, 0.897) 0%, rgba(46, 7, 63, 1) 100%);
   padding: 10px 0;
 }
 
@@ -209,22 +203,24 @@
   margin-top: 10px;
 }
 
-.linkDelButt {
-  width: 5%;
-  height: 1%;
-  text-align: center;
-  background-color: #191a19;
+.link-del-butt {
+  width: auto;
+  margin-bottom: 10px;
 }
 
-.linkDelButt:hover {
-  background-color: #1e5128;
+.link-del-butt i {
+  color: #982B1C;
+}
+
+.link-del-butt:hover {
+  background-color: #982a1c5f;
 }
 
 .windLinkNew {
   float: none;
   width: 150px;
   text-align: center;
-  font-size: 15px;
+  margin-top: 5px;
 }
 
 .windLinkNewEmpty {
@@ -253,7 +249,6 @@
 }
 
 .inputLink {
-  width: 50%;
   margin-bottom: 10px;
 }
 
