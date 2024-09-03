@@ -13,38 +13,42 @@ if ($_COOKIE['user'] == '') {
   <html lang="ru">
 
   <head>
-        <link rel="stylesheet" href="/CSS/search.css">
-        <title>Пошук</title>
-    </head>
+    <link rel="stylesheet" href="/CSS/search.css">
+    <title>Пошук</title>
+  </head>
 
   <body bgcolor="#191a19">
 
     <div class="content"> <!--Основная часть сайта-->
       <form action="page.php" method="get">
         <div class="searchBar">
-          <input list="searchPlayer" type="text" class="pole2 searchInp" name="login" placeholder="Введіть нік того, кого хочете знайти"
-            maxlength="50" required>
+          <input list="searchPlayer" type="text" class="pole2 searchInp" name="login"
+            placeholder="Введіть нік того, кого хочете знайти" maxlength="50" required>
           <datalist id="searchPlayer">
-            <?php foreach ($userInf as $userInf1) { echo '<option value="' . $userInf1['login'] . '">'; } ?>
+            <?php foreach ($userInf as $userInf1) {
+              echo '<option value="' . $userInf1['login'] . '">';
+            } ?>
           </datalist>
           <button type="submit" style="display:none;" id="searchButt"></button>
           <label for="searchButt"><i class="fa-solid fa-magnifying-glass searchButt"></i></label>
         </div>
       </form>
 
-      <?php 
+      <div class="users">
+        <?php
         foreach ($userInf as $userInf):
-      ?>
-      <div class="userInf" onclick="self.location = 'page.php?login=<?= $userInf['login'] ?>';">
-        <div class="userInfStyle">
-          <div class="userInfMain">
-            <img src="ava_user/<?= $userInf['ava'] ?>">
-            <b><?= $userInf['login'] ?></b>
+          ?>
+          <div class="userInf" onclick="self.location = 'page.php?login=<?= $userInf['login'] ?>';">
+            <div class="userInfStyle">
+              <div class="userInfMain">
+                <img src="ava_user/<?= $userInf['ava'] ?>">
+                <b><?= $userInf['login'] ?></b>
+              </div>
+              <?= printRole($userInf['role']) ?>
+            </div>
           </div>
-          <?= printRole($userInf['role']) ?>
-        </div>
+        <?php endforeach; ?>
       </div>
-      <?php endforeach; ?>
     </div>
 
   </body>

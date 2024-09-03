@@ -1,5 +1,6 @@
 <?php
-include ("connect.php");
+session_start();
+include("connect.php");
 
 if ($_COOKIE['user'] == ''):
   ?>
@@ -9,6 +10,7 @@ if ($_COOKIE['user'] == ''):
   <head>
     <link rel="shortcut icon" href="images/2_green.png" type="image/x-icon">
     <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="CSS/interface.css">
     <link rel="stylesheet" href="CSS/pop-up.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,27 +24,28 @@ if ($_COOKIE['user'] == ''):
 
   <body bgcolor="#191a19">
 
-    <div class="form">
-      <div class="formStyle">
-        <p class="header">Вхід</p>
-        <form action="validatoin-form/auth.php" method="post">
-          <input type="text" name="login" class="pole" placeholder="Нік на сервері" required>
-          <input type="password" name="password" class="pole" placeholder="Пароль" required>
-          <a href="reg.php">
-            <p class="transition">Зареєструватися <i class="fa-solid fa-arrow-right"></i></p>
-          </a>
-          <button type="submit" class="button">Увійти</button>
+    <div class="parent-box">
+      <div class="box">
+        <h1 class="box-header">Вхід</h1>
+        <form action="validation-form/auth.php" method="post">
+          <div class="input-box">
+            <input type="text" name="login" class="pole1" placeholder="Нік на сервері" required>
+            <input type="password" name="password" class="pole1" placeholder="Пароль" required>
+          </div>
+          <p class="p-link">Не пам'ятаю пароль</p>
+
+          <?php
+          if (isset($_SESSION['error'])) {
+            echo '<div class="errors">' . $_SESSION['error'] . '</div>';
+            unset($_SESSION['error']);
+          }
+          ?>
+
+          <button type="submit" class="button-green butt-box">Увійти</button>
         </form>
+        <p class="p-link basemant-link">Зареєструватись</p>
       </div>
     </div>
-
-    <?php
-    session_start();
-    if (isset($_SESSION['error'])) {
-      echo '<script>showPopUp("<i class=\'fa-solid fa-circle-xmark\'></i> ' . $_SESSION['error'] . '", false);</script>';
-      unset($_SESSION['error']);
-    }
-    ?>
 
   </body>
 

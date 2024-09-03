@@ -22,7 +22,6 @@ else: ?>
             <?php
             $userInf = mysqli_query($mysql, "SELECT * FROM `user`");
             ?>
-
             <form action="banker.php" method="get">
                 <div class="searchBar">
                     <input list="searchPlayer" type="text" class="pole2 searchInp" name="user"
@@ -36,7 +35,6 @@ else: ?>
                     <label for="searchButt"><i class="fa-solid fa-magnifying-glass searchButt"></i></label>
                 </div>
             </form>
-
             <?php
             $userSearch = htmlspecialchars($_GET['user']);
             $userCards = mysqli_query($mysql, "SELECT * FROM `card` WHERE `card_user` = '$userSearch'");
@@ -54,21 +52,22 @@ else: ?>
                         <div class="card-design"
                             style="background-image: url('../images/des_cards/<?= $userCardsInfo['card_design'] ?>');">
                             <p class="card-num" onclick="copyToClipboard(<?= $userCardsInfo['card_number'] ?>)">
-                                <?= $userCardsInfo['card_number'] ?></p>
+                                <?= $userCardsInfo['card_number'] ?>
+                            </p>
                         </div>
                         <div class="card-info">
                             <p class="card-name"><?= $userCardsInfo['card_name'] ?></p>
                             <p class="card-balance"><?= $userCardsInfo['card_balance'] ?> ІР</p>
                         </div>
                         <div class="card-action">
-                            <button class="button card-butt"
+                            <button class="button-grey2 card-butt"
                                 onclick="showCardChange('card-plus-<?= $userCardsInfo['card_number'] ?>')"><i
                                     class="fa-solid fa-plus"></i>
                                 Поповнити</button>
-                            <button class="button card-butt"
+                            <button class="button-grey2 card-butt"
                                 onclick="showCardChange('card-minus-<?= $userCardsInfo['card_number'] ?>')"><i
                                     class="fa-solid fa-minus"></i> Зняти</button>
-                            <button class="button card-butt"
+                            <button class="button-grey2 card-butt"
                                 onclick="showCardChange('transaction-info-<?= $userCardsInfo['card_number'] ?>')"><i
                                     class="fa-solid fa-money-bill-transfer"></i> Транзакції</button>
                         </div>
@@ -83,7 +82,7 @@ else: ?>
                             <input type="hidden" name="mess" value="Поповнення рахунку. Банкір <?= $_COOKIE['user'] ?>" readonly
                                 required>
                             <input type="hidden" name="type" value="0" readonly required>
-                            <button type="submit" class="button card-butt pole-card-change">Підтвердити</button>
+                            <button type="submit" class="button-green pole-card-change">Підтвердити</button>
                         </div>
                     </form>
 
@@ -96,7 +95,7 @@ else: ?>
                             <input type="hidden" name="mess" value="Зняття з рахунку. Банкір <?= $_COOKIE['user'] ?>" readonly
                                 required>
                             <input type="hidden" name="type" value="1" readonly required>
-                            <button type="submit" class="button card-butt pole-card-change">Підтвердити</button>
+                            <button type="submit" class="button-green pole-card-change">Підтвердити</button>
                         </div>
                     </form>
 

@@ -220,27 +220,23 @@
   margin: 10px 0;
 }
 
-.postIcons {
-  font-size: 20px;
+.post-icons {
   display: flex;
-  grid-gap: 10px;
+  grid-gap: 5px;
   align-items: center;
+  cursor: pointer;
 }
 
-.postIcons i:hover {
-  cursor: pointer;
-  transition: all 0.20s ease 0s;
-  color: #1e5128;
+.post-butt {
+  padding: 5px 10px;
+  width: auto;
+  font-size: 20px;
 }
 
 .likeable-object button {
   border: none;
-  background-color: #212421;
+  background-color: transparent;
   font-size: 20px;
-}
-
-.share {
-  transform: rotate(7deg);
 }
 
 .commentContainer {

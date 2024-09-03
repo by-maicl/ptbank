@@ -25,7 +25,7 @@ if ($_COOKIE['user'] == ''):
     <div class="form">
       <div class="formStyle">
         <p class="header">Реєстрація</p>
-        <form action="validatoin-form/check.php" method="post">
+        <form action="validation-form/check.php" method="post">
           <input type="text" name="login" class="pole" placeholder="Нік на сервері" required>
           <input type="email" name="email" class="pole" placeholder="Електронна пошта" required>
           <input type="password" name="password" class="pole" placeholder="Пароль" required>

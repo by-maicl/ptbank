@@ -1,15 +1,14 @@
 <?php
 session_start();
+include("../connect.php");
 
 $login = filter_var(trim($_POST['login']), FILTER_SANITIZE_STRING);
 $password = filter_var(trim($_POST['password']), FILTER_SANITIZE_STRING);
-
 $password = md5($password . "su8ft89er7v");
 
-include ("../connect.php");
-$result = $mysql->query("SELECT * FROM `user` WHERE `login` = '$login' AND `password` = '$password'");
-$user = $result->fetch_assoc();
-if (count($user) == 0) {
+$user = mysqli_fetch_assoc(mysqli_query($mysql, "SELECT * FROM `user` WHERE `login` = '$login' AND `password` = '$password'"));
+
+if (empty($user)) {
   $_SESSION['error'] = "Невірний нік чи пароль!";
   header('Location: ../login.php');
   exit();

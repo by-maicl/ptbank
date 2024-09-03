@@ -75,8 +75,6 @@
 
 .card-butt {
     width: auto;
-    background-color: #191a19;
-    padding: 10px;
 }
 
 .data-empty-mess {
@@ -95,17 +93,14 @@
 .card-change {
     margin-top: 5px;
     padding-bottom: 10px;
+    display: grid;
+    grid-gap: 5px;
 }
 
 .pole-card-change {
     width: 50%;
     display: block;
     margin: 0 auto;
-}
-
-.card-change button {
-    background-color: #4e9f3d;
-    margin-top: 5px;
 }
 
 .transaction-info {

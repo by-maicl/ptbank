@@ -39,6 +39,13 @@ if ($_COOKIE['user'] == '') {
             </div>
         </div>
 
+        <div class="empty-content">
+            <p class="empty-text">Ще ніхто не вподобав</p>
+            <i class="fa-solid fa-heart-crack empty-icon"></i>
+            <button class="button-green empty-butt">Щось створити</button>
+        </div>
+
+
         <!-- Вікно підтвердження (маленьке) -->
         <div class="windBack" id="smallWind">
             <div class="wind smallerWind">
@@ -60,7 +67,7 @@ if ($_COOKIE['user'] == '') {
                 <div class="wind-mobile">
                     <a href="#" class="xmarkPhone"><i class="fa-solid fa-arrow-left"></i></a>
                     <a href="#" class="xmark"><i class="fa-solid fa-xmark"></i></a>
-                    <h2 class="wind-header">Заголовок</h2>
+                    <h2 class="wind-header wind-header-indent">Заголовок</h2>
                     <button type="submit" class="OK">Зберегти</button>
                 </div>
             </div>

@@ -255,12 +255,23 @@
   background-color: #191a19;
 }
 
-.transWind input {
-  margin-top: 10px;
+.wind-transaction {
+  display: grid;
+  grid-gap: 5px;
 }
 
-.xmarkTransInf {
-  position: absolute;
+.wind-trans-error {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #982B1C;
+  background-color: #982a1c1d;
+  color: #982B1C;
+  text-align: center;
+  font-weight: 600;
+}
+
+.wind-trans-butt {
+  margin-top: 10px;
 }
 
 .transHeader {
@@ -269,46 +280,85 @@
   align-items: center;
   grid-gap: 5px;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
-.transInfBalance {
-  margin: 0;
+.trans-ava {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.trans-header-date {
+  color: #828282;
+}
+
+.hr-trans {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.trans-info-balance {
   text-align: center;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: 600;
+  margin-top: 25px;
 }
 
-.transInfButt {
-  width: 100%;
-  background-color: #191a19;
-  margin-top: 5px;
-  padding: 10px;
-  font-size: 16px;
-  text-align: left;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.20s ease 0s;
-}
-
-.transInfButtIcon {
-  position: absolute;
-  left: 25px;
-}
-
-.transInfButtMess {
-  padding-left: 30px;
-}
-
-.transInfButt:hover {
-  background-color: #1e5128;
-}
-
-.warnIcon {
-  font-size: 50px;
+.trans-info-basemant {
   margin-top: 10px;
+  display: grid;
+  grid-gap: 5px;
+}
+
+.trans-info-butt {
+  text-align: left;
+}
+
+.trans-info-butt i {
+  position: absolute;
+  margin-top: 2px;
+}
+
+.trans-info-butt p {
+  margin-left: 25px;
+}
+
+.stats {
+  display: flex;
+  grid-gap: 5px;
+}
+
+.stats-el {
+  background-color: #191a19;
+  padding: 10px;
+  text-align: center;
+}
+
+.stats-header {
+  font-size: 18px;
+}
+
+.stats-plus-header {
+  rotate: 90deg;
+}
+
+.stats-info {
+  padding: 20px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #4e9f3d;
+}
+
+.stats-info-minus {
+  color: #982B1C;
+}
+
+.stats-basemant {
   color: #828282;
+  margin: 10px 0;
 }
 
 .penaltyBack {
@@ -319,46 +369,5 @@
   color: white;
   margin: 0 0 5px 0;
 }
-
-.penalties {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  grid-gap: 5px;
-}
-
-.penalty {
-  flex: 1 1 30%;
-  max-width: 30%;
-  height: auto;
-  background-color: #212421;
-  border-radius: 10px;
-  padding: 10px;
-  color: white;
-}
-
-.penaltyHeader {
-  margin: 0;
-  font-size: 20px;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-table {
-  margin-bottom: 15px;
-}
-
-.penaltyInfHeader {
-  color: #828282;
-}
-
-td {
-  padding: 0;
-}
-
-.payButt {
-  background-color: #4e9f3d;
-}
-
 
 @media (max-width: 550px) {}

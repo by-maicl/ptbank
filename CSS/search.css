@@ -27,12 +27,18 @@
   outline: none;
 }
 
+.users {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+  margin-top: 5px;
+}
+
 .userInf {
   width: 100%;
   height: auto;
   background-color: #212421;
   border-radius: 10px;
-  margin-top: 5px;
   color: white;
   cursor: pointer;
   transition: all 0.20s ease 0s;
@@ -68,4 +74,13 @@
   margin: 10px 0 7px 0;
 } 
 
-@media (max-width: 550px) {}
+@media (max-width: 550px) {
+  .users {
+    display: block;
+    margin: 0;
+  }
+
+  .userInf {
+    margin-top: 5px;
+  }
+}

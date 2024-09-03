@@ -292,26 +292,6 @@
   overflow: hidden;
 }
 
-.postClear {
-  color: #828282;
-  font-size: 18px;
-  text-align: center;
-}
-
-.postClear p {
-  margin: 0;
-}
-
-.postClearButt {
-  width: 40%;
-}
-
-#postClearIcon {
-  color: #828282;
-  font-size: 35px;
-  margin: 10px 0;
-}
-
 .invInput {
   display: none;
 }

@@ -29,7 +29,6 @@ $user = mysqli_fetch_assoc($user1); ?>
       </a>
       <div class="upMenuInf">
         <a href="index.php" class="upMenuButt upMenuMain">Головна</a>
-        <a href="mods.php" class="upMenuButt upMenuRules">Моди</a>
         <a href="rules.php" class="upMenuButt upMenuRules">Правила</a>
       </div>
       <?php if (empty($_COOKIE['user'])): ?>

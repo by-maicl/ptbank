@@ -23,6 +23,12 @@ i {
     color: #4e9f3d;
 }
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 li {
     list-style-type: none;
 }
@@ -202,6 +208,10 @@ input::-webkit-inner-spin-button {
     font-size: 20px;
 }
 
+.wind-header-indent {
+    margin-bottom: 15px;
+}
+
 .small-wind-header {
     text-align: center;
 }
@@ -298,6 +308,24 @@ input::-webkit-inner-spin-button {
     background-color: #212421;
     border-radius: 10px;
     position: relative;
+    color: #fff;
+}
+
+.empty-content {
+    color: #828282;
+    text-align: center;
+}
+
+.empty-icon {
+    color: #828282;
+    font-size: 40px;
+    margin: 5px 0;
+}
+
+.empty-butt {
+    width: auto;
+    margin-top: 10px;
+    padding: 10px 25px;
 }
 
 @media (max-width: 1024px) {
@@ -321,6 +349,7 @@ input::-webkit-inner-spin-button {
         max-height: none;
         top: 0;
         position: fixed;
+        animation: none;
     }
 
     .smallerWind {

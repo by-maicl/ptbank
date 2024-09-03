@@ -2,9 +2,9 @@
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 include("../connect.php");
 
-if ($_COOKIE['user'] == '') {
+if ($_COOKIE['user'] == ''):
   echo "<script>self.location='/index.php';</script>";
-} else {
+else:
 
   $role = mysqli_fetch_assoc(mysqli_query($mysql, "SELECT * FROM `user` WHERE `login` = '$_COOKIE[user]'"));
   $bank = mysqli_fetch_assoc(mysqli_query($mysql, "SELECT * FROM `card` WHERE `card_user` = '$_COOKIE[user]'"));
@@ -83,19 +83,14 @@ if ($_COOKIE['user'] == '') {
             <font class="menuText">Банк</font>
           </li>
         </a>
+        <a href="group.php">
+          <li class="menuButt menuGroup"><i class="fa-solid fa-users menuIcon"></i>
+            <font class="menuText">Спільноти</font>
+          </li>
+        </a>
         <a href="petition.php">
           <li class="menuButt menuPetition"><i class="fa-solid fa-check-to-slot menuIcon"></i>
             <font class="menuText">Петиції</font>
-          </li>
-        </a>
-        <!-- <a href="cities.php">
-          <li class="menuButt menuСommunities"><i class="fa-solid fa-users menuIcon"></i>
-            <font class="menuText">Спільноти</font>
-          </li>
-        </a> -->
-        <a href="cities.php">
-          <li class="menuButt menuCities"><i class="fa-solid fa-city menuIcon"></i>
-            <font class="menuText">Міста</font>
           </li>
         </a>
         <a href="search.php">
@@ -122,7 +117,7 @@ if ($_COOKIE['user'] == '') {
             break;
         }
         ?>
-        <p align="center" class="version">v2.1</p>
+        <p align="center" class="version">v2.1.0</p>
       </ul>
     </div>
 
@@ -244,7 +239,7 @@ if ($_COOKIE['user'] == '') {
       <button class="button-grey2 wind-user-butt"
         onclick="self.location='page.php?login=<?= $_COOKIE['user'] ?>#settings'"><i class="fa-solid fa-gear"></i>
         Налаштування</button>
-      <button class="button-grey2 wind-user-butt" onclick="self.location='/validatoin-form/exit.php'"><i
+      <button class="button-grey2 wind-user-butt" onclick="self.location='/validation-form/exit.php'"><i
           class="fa-solid fa-door-open"></i> Вийти</button>
     </div>
 
@@ -260,25 +255,7 @@ if ($_COOKIE['user'] == '') {
     }
     ?>
 
-    <script>
-      // // Завантаження сповіщень
-      // document.getElementById("loadNotification").addEventListener("click", function () {
-      //   // Створюємо AJAX-запит
-      //   var xhr = new XMLHttpRequest();
-      //   xhr.open("GET", "php/get-notification.php", true);
-      //   xhr.onload = function () {
-      //     if (xhr.status == 200) {
-      //       // Виводимо отримані дані у div з id="output"
-      //       document.getElementById("notifOutput").innerHTML = xhr.responseText;
-      //     } else {
-      //       document.getElementById("notifOutput").innerHTML = "Помилка завантаження даних";
-      //     }
-      //   };
-      //   xhr.send();
-      // });
-    </script>
-
   </body>
 
   </html>
-<?php } ?>
+<?php endif; ?>

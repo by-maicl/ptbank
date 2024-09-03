@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("../../connect.php");
 
 function getCardInfo($mysql, $cardNum)
@@ -31,11 +32,23 @@ $cardTo = $_POST['cardTo'];
 $cardFromInfo = getCardInfo($mysql, $cardFrom);
 $cardToInfo = getCardInfo($mysql, $cardTo);
 
+if (empty($cardToInfo)) {
+    $_SESSION['error_trans'] = "Невірний номер картки отримувача";
+    echo "<script>self.location='../bank.php?cId=$cardFromInfo[card_id]#transaction';</script>";
+    exit();
+}
+
 date_default_timezone_set('Europe/Vilnius');
 $date = date('H:i d.m.Y');
 
 $sum = $_POST['sum'];
 $mess = htmlspecialchars($_POST['mess']);
+
+if ($cardFromInfo['card_balance'] < $sum) {
+    $_SESSION['error_trans'] = "На вашому рахунку недостатньо коштів";
+    echo "<script>self.location='../bank.php?cId=$cardFromInfo[card_id]#transaction';</script>";
+    exit();
+}
 
 mysqli_query($mysql, "INSERT INTO `trans` (`trans_from`, `trans_to`, `card_from`, `card_to`, `trans_date`, `trans_sum`, `trans_mess`) VALUES ('$cardFromInfo[card_user]', '$cardToInfo[card_user]', '$cardFrom', '$cardTo', '$date', '$sum', '$mess')");
 
