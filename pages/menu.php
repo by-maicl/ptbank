@@ -183,7 +183,8 @@ else:
           </li>
         </a>
         <li class="mobile-menu-part">
-          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-bars burger-butt" onclick="openMenu()" id="burgerClose"></i>
+          <i class="fa-solid fa-xmark burger-butt" onclick="openMenu()" id="burgerOpen" style="display:none;"></i>
           <p class="mobile-menu-text">Ще</p>
         </li>
       </ul>
@@ -242,6 +243,15 @@ else:
       <button class="button-grey2 wind-user-butt" onclick="self.location='/validation-form/exit.php'"><i
           class="fa-solid fa-door-open"></i> Вийти</button>
     </div>
+
+    <!-- <div class="burger-menu-back" id="burgerMenu" style="display:none;">
+      <div class="burger-menu universal-box">
+        <div class="burger-menu-style">
+          <a href=""><button class="button-grey2"><i class="fa-solid fa-user"></i> Профіль</button></a>
+          <a href=""><button class="button-grey2"><i class="fa-solid fa-users"></i> Спільноти</button></a>
+        </div>
+      </div>
+    </div> -->
 
     <?php
     if (isset($_SESSION['success'])) {

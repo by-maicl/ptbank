@@ -106,7 +106,7 @@
 
 .hrBack {
   background-color: #212421;
-  padding: 0 5px;
+  padding: 0 10px;
 }
 
 .windSubtitle {
@@ -239,10 +239,18 @@
   margin: 10px 0;
 }
 
-/* .windSafety p {
+.windSafety p {
   color: white;
   margin-bottom: 10px;
-} */
+}
+
+.wind-half-butt {
+  margin-top: 5px;
+}
+
+.icon-key {
+  transform: rotate(45deg);
+}
 
 .windEditDescription {
   margin-top: 30px;
@@ -292,8 +300,23 @@
   overflow: hidden;
 }
 
+.windSmall {
+  width: 30%;
+}
+
 .invInput {
   display: none;
+}
+
+.wind-error {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #982B1C;
+  background-color: #982a1c1d;
+  color: #982B1C;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 5px;
 }
 
 @media (max-width: 550px) {

@@ -9,7 +9,7 @@ $password = md5($password . "su8ft89er7v");
 $user = mysqli_fetch_assoc(mysqli_query($mysql, "SELECT * FROM `user` WHERE `login` = '$login' AND `password` = '$password'"));
 
 if (empty($user)) {
-  $_SESSION['error'] = "Невірний нік чи пароль!";
+  $_SESSION['error'] = "Невірний нік чи пароль";
   header('Location: ../login.php');
   exit();
 }

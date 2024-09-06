@@ -52,5 +52,19 @@ function openWindow(el) {
   }
 }
 
+// function openMenu() {
+//   let menu = document.getElementById('burgerMenu');
+//   toggle(menu);
 
+//   let iconClose = document.getElementById('burgerClose');
+//   let iconOpen = document.getElementById('burgerOpen');
+
+//   if (menu.style.display == 'none') {
+//     iconClose.style.display = 'block';
+//     iconOpen.style.display = 'none';
+//   } else {
+//     iconOpen.style.display = 'block';
+//     iconClose.style.display = 'none'; 
+//   }
+// }
 

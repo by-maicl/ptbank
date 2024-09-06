@@ -5,6 +5,8 @@ include("../../connect.php");
 $description = htmlspecialchars($_POST['description']);
 $login = $_COOKIE['user'];
 
+$email = htmlspecialchars($_POST['email']);
+
 $fileAva = $_FILES['ava-file'];
 $fileBack = $_FILES['back-file'];
 $pathAva = '../ava_user/' . $fileAva['name'];
@@ -62,6 +64,8 @@ if ($fileAva['error'] === UPLOAD_ERR_OK && $fileBack['error'] === UPLOAD_ERR_OK)
 } else {
     mysqli_query($mysql, "UPDATE `user` SET `description` = '$description' WHERE `login` = '$login'");
 }
+
+mysqli_query($mysql, "UPDATE `user` SET `email` = '$email' WHERE `login` = '$login'");
 
 mysqli_close($mysql);
 header("Location: ../page.php?login=$_COOKIE[user]");

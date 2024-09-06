@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "menu.php";
 
 $login = htmlspecialchars($_GET['login']);
@@ -255,22 +256,50 @@ $login = htmlspecialchars($_GET['login']);
               </details>
             </div>
 
-            <!-- <div class="profileLine">
-                <hr color="#414141">
-                <p class="hrText">
-                  <font class="hrBack">Безпека</font>
-                </p>
-              </div>
-              <div class="windSafety">
-                <p>Для убезпечення вашого аккаунту рекомендовано ввести електронну пошту. В разі чого, за допомогою неї буде
-                  скинуто ваш пароль.</p>
-                <input type="email" name="email" class="pole1" placeholder="Введіть свій email" required>
-              </div> -->
+            <div class="profileLine">
+              <hr color="#414141">
+              <p class="hrText">
+                <font class="hrBack">Безпека</font>
+              </p>
+            </div>
+            <div class="windSafety">
+              <p>Рекомендовано ввести email. В разі чого, з його допомогою буде скинуто пароль</p>
+              <input type="email" name="email" class="pole1" placeholder="Введіть свій email" required
+                value="<?= $pageInfo['email'] ?>">
+              <button type="button" onclick="self.location='#change-password'" class="button-grey2 wind-half-butt"><i
+                  class="fa-solid fa-key icon-key"></i> Змінити пароль</button>
+            </div>
+            <div class="profileLine">
+              <hr color="#414141">
+            </div>
             <button type="submit" class="OK">Зберегти</button>
             </form>
           </div>
         </div>
       </div>
+
+      <div class="windBack" id="change-password">
+        <div class="wind windSmall">
+          <div class="wind-mobile">
+            <a href="#settings" class="xmarkPhone"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="#settings" class="xmark"><i class="fa-solid fa-xmark"></i></a>
+            <h2 class="wind-header wind-header-indent">Зміна пароля</h2>
+            <form action="php/change-password.php" method="post">
+              <input type="password" class="pole1" name="oldPassword" placeholder="Старий пароль" required>
+              <input type="password" class="pole1" name="newPassword" placeholder="Новий пароль" required
+                style="margin-top:5px;">
+              <?php
+              if (isset($_SESSION['error-pass'])) {
+                echo '<div class="wind-error">' . $_SESSION['error-pass'] . '</div>';
+                unset($_SESSION['error-pass']);
+              }
+              ?>
+              <button type="submit" class="OK" style="margin-top:10px;">Зберегти</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
     <?php endif; ?>
 
 

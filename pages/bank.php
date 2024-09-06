@@ -89,6 +89,15 @@ function printPenaltyCount($request)
   }
 }
 
+function calcBalanceStats($request, $countRecords)
+{
+  $sum = 0;
+  foreach ($request as $data) {
+    $sum += $data['trans_sum'];
+  }
+  return $sum;
+}
+
 $cardInf = mysqli_query($mysql, "SELECT * FROM `card` WHERE `card_user` = '$_COOKIE[user]'");
 $cardInf2 = mysqli_query($mysql, "SELECT * FROM `card` WHERE `card_user` = '$_COOKIE[user]'");
 $cardInfMore = mysqli_fetch_assoc($cardInf);
@@ -96,8 +105,8 @@ $choiseCardId = $_GET['cId'];
 
 $choiseCardInf = mysqli_fetch_assoc(mysqli_query($mysql, "SELECT * FROM `card` WHERE `card_id` = '$choiseCardId'"));
 
-$transInf = mysqli_query($mysql, "SELECT * FROM `trans` WHERE `card_from` = '$choiseCardInf[card_number]'  OR `card_to` = '$choiseCardInf[card_number]' AND `trans_from` = '$_COOKIE[user]' OR `trans_to` = '$_COOKIE[user]'  ORDER BY `trans_id` DESC");
-$transInfMore = mysqli_fetch_assoc($transInf);
+$trans = mysqli_query($mysql, "SELECT * FROM `trans` WHERE `card_from` = '$choiseCardInf[card_number]'  OR `card_to` = '$choiseCardInf[card_number]' AND `trans_from` = '$_COOKIE[user]' OR `trans_to` = '$_COOKIE[user]'  ORDER BY `trans_id` DESC");
+$transInfMore = mysqli_fetch_assoc($trans);
 
 $penaltyCount = mysqli_fetch_assoc(mysqli_query($mysql, "SELECT COUNT(*) as count FROM `penalty` WHERE `penalt_status` = 1 AND `penalt_to` = '$_COOKIE[user]'"));
 ?>
@@ -201,62 +210,62 @@ $penaltyCount = mysqli_fetch_assoc(mysqli_query($mysql, "SELECT COUNT(*) as coun
                       <i class="fa-solid fa-sack-dollar empty-icon"></i>
                     </div>';
             }
-            foreach ($transInf as $transInf):
+            foreach ($trans as $trans):
               ?>
-              <div class="transElement" onclick="self.location='#trans-<?= $transInf['trans_id'] ?>'">
+              <div class="transElement" onclick="self.location='#trans-<?= $trans['trans_id'] ?>'">
                 <div class="transElementStyle">
                   <div class="transUserInf">
                     <?php
-                    echo '<img src="ava_user/' . printTransAvaUser($transInf, $mysql) . '" class="userAvaTrans">';
+                    echo '<img src="ava_user/' . printTransAvaUser($trans, $mysql) . '" class="userAvaTrans">';
 
-                    if (empty($transInf['trans_mess'])) {
-                      echo "<p class='nameTrans'>" . printTransUser($transInf) . "</p>";
+                    if (empty($trans['trans_mess'])) {
+                      echo "<p class='nameTrans'>" . printTransUser($trans) . "</p>";
                     } else {
-                      echo "<p class='nameTrans'>" . printTransUser($transInf) . "<br><font color='#828282'>$transInf[trans_mess]</font></p>";
+                      echo "<p class='nameTrans'>" . printTransUser($trans) . "<br><font color='#828282'>$trans[trans_mess]</font></p>";
                     }
                     ?>
                   </div>
                   <div class="balanceChange">
-                    <?= printBalanceChange($transInf) ?>
+                    <?= printBalanceChange($trans) ?>
                   </div>
                 </div>
               </div>
 
-              <div class="windBack" id="trans-<?= $transInf['trans_id'] ?>">
+              <div class="windBack" id="trans-<?= $trans['trans_id'] ?>">
                 <div class="wind smallerWind">
                   <div class="wind-mobile">
                     <div class="close-wind-line" onclick="self.location = '#'"></div>
                     <a href="#" class="xmark"><i class="fa-solid fa-xmark"></i></a>
-                    <div class="transHeader" onclick="self.location='page.php?login=<?= printTransUser($transInf) ?>'">
-                      <img src="ava_user/<?= printTransAvaUser($transInf, $mysql) ?>" class="trans-ava">
+                    <div class="transHeader" onclick="self.location='page.php?login=<?= printTransUser($trans) ?>'">
+                      <img src="ava_user/<?= printTransAvaUser($trans, $mysql) ?>" class="trans-ava">
                       <p class="wind-header">
-                        <?= printTransUser($transInf) ?>
+                        <?= printTransUser($trans) ?>
                       </p>
                       <p class="trans-header-date">
-                        <?= $transInf['trans_date'] ?>
+                        <?= $trans['trans_date'] ?>
                       </p>
                     </div>
                     <hr color="#414141" class="hr-trans">
                     <p class="trans-info-balance">
-                      <?= printBalanceChange($transInf) ?>
+                      <?= printBalanceChange($trans) ?>
                     </p>
                     <div class="trans-info-basemant">
                       <button class="button-grey2 trans-info-butt"><i class="fa-solid fa-comment"></i>
                         <p>
                           <?php
-                          if (empty($transInf['trans_mess'])) {
+                          if (empty($trans['trans_mess'])) {
                             echo "Коментар відсутній";
                           } else {
-                            echo $transInf['trans_mess'];
+                            echo $trans['trans_mess'];
                           }
                           ?>
                         </p>
                       </button>
                       <button class="button-grey2 trans-info-butt"
-                        onclick="copyToClipboard(<?= printCardNumTransInf($transInf) ?>, 'Номер карти скопійовано')"><i
+                        onclick="copyToClipboard(<?= printCardNumTransInf($trans) ?>, 'Номер карти скопійовано')"><i
                           class="fa-solid fa-credit-card"></i>
                         <p>
-                          <?= printCardNumTransInf($transInf) ?>
+                          <?= printCardNumTransInf($trans) ?>
                         </p>
                       </button>
                     </div>
@@ -316,23 +325,38 @@ $penaltyCount = mysqli_fetch_assoc(mysqli_query($mysql, "SELECT COUNT(*) as coun
         </div>
       </div>
 
-      <div class="windBack" id="stats">
+      <div class="windBack" id="stats"> <!-- Статистика -->
         <div class="wind windBank">
           <div class="wind-mobile">
             <a href="#" class="xmarkPhone"><i class="fa-solid fa-arrow-left"></i></a>
             <a href="#" class="xmark"><i class="fa-solid fa-xmark"></i></a>
             <h2 class="wind-header wind-header-indent">Статистика</h2>
-            <div class="stats">
-              <div class="stats-el universal-box">
-                <p class="stats-header"><i class="fa-solid fa-arrow-right-to-bracket stats-plus-header"></i> Надходження</p>
-                <p class="stats-info">1000 ІР</p>
+            <?php
+            $statsPlusRequest = mysqli_query($mysql, "SELECT * FROM `trans` WHERE `trans_to` = '$_COOKIE[user]'");
+            $statsMinusRequest = mysqli_query($mysql, "SELECT * FROM `trans` WHERE `trans_from` = '$_COOKIE[user]'");
+
+            if (mysqli_num_rows($statsPlusRequest) <= 0 || mysqli_num_rows($statsMinusRequest) <= 0) {
+              echo '<div class="empty-content">
+                      <p class="empty-text">Тут з\'явиться ваша статистика після декількох транзакцій</p>
+                      <i class="fa-solid fa-chart-line empty-icon"></i>
+                    </div>';
+            } else {
+              ?>
+              <div class="stats">
+                <div class="stats-el universal-box">
+                  <p class="stats-header"><i class="fa-solid fa-arrow-right-to-bracket stats-plus-header"></i> Надходження
+                  </p>
+                  <p class="stats-info"><?= calcBalanceStats($statsPlusRequest, mysqli_num_rows($statsPlusRequest)) ?> ІР
+                  </p>
+                </div>
+                <div class="stats-el universal-box">
+                  <p class="stats-header"><i class="fa-solid fa-arrow-up-from-bracket"></i> Витрати</p>
+                  <p class="stats-info stats-info-minus">
+                    -<?= calcBalanceStats($statsMinusRequest, mysqli_num_rows($statsMinusRequest)) ?> ІР</p>
+                </div>
               </div>
-              <div class="stats-el universal-box">
-                <p class="stats-header"><i class="fa-solid fa-arrow-up-from-bracket"></i> Витрати</p>
-                <p class="stats-info stats-info-minus">-1000 ІР</p>
-              </div>
-            </div>
-            <p class="stats-basemant">*вказана інформація за весь час та зі всіх рахунків</p>
+              <p class="stats-basemant">*вказана інформація за весь час та зі всіх рахунків</p>
+            <?php } ?>
             <button onclick="self.location='#'" class="OK">OK</button>
           </div>
         </div>

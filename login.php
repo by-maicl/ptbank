@@ -11,7 +11,6 @@ if ($_COOKIE['user'] == ''):
     <link rel="shortcut icon" href="images/2_green.png" type="image/x-icon">
     <link rel="stylesheet" href="CSS/login.css">
     <link rel="stylesheet" href="CSS/interface.css">
-    <link rel="stylesheet" href="CSS/pop-up.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
@@ -24,28 +23,34 @@ if ($_COOKIE['user'] == ''):
 
   <body bgcolor="#191a19">
 
-    <div class="parent-box">
+    <form action="validation-form/auth.php" method="post">
       <div class="box">
-        <h1 class="box-header">Вхід</h1>
-        <form action="validation-form/auth.php" method="post">
-          <div class="input-box">
-            <input type="text" name="login" class="pole1" placeholder="Нік на сервері" required>
+        <div class="part-left">
+          <p class="header">Авторизація</p>
+          <p class="errors">
+            <?php
+            if (isset($_SESSION['error'])) {
+              echo $_SESSION['error'];
+              unset($_SESSION['error']);
+            }
+            ?>
+          </p>
+          <div class="inputs">
+            <input type="text" name="login" class="pole1" placeholder="Нікнейм" required>
             <input type="password" name="password" class="pole1" placeholder="Пароль" required>
           </div>
-          <p class="p-link">Не пам'ятаю пароль</p>
-
-          <?php
-          if (isset($_SESSION['error'])) {
-            echo '<div class="errors">' . $_SESSION['error'] . '</div>';
-            unset($_SESSION['error']);
-          }
-          ?>
-
-          <button type="submit" class="button-green butt-box">Увійти</button>
-        </form>
-        <p class="p-link basemant-link">Зареєструватись</p>
+          <a href="password-recowery.php">
+            <p class="link-text">Забули пароль?</p>
+          </a>
+          <button type="submit" class="button-green" style="width:50%; border-radius:20px;">Увійти</button>
+        </div>
+        <div class="part-right">
+          <p class="header header-color-part">Ще не з нами?</p>
+          <p class="under-header">Зареєструйся, щоб отримувати максимальне задоволення від гри</p>
+          <a href="reg.php"><button type="button" class="button-color-part">Зареєструватися</button></a>
+        </div>
       </div>
-    </div>
+    </form>
 
   </body>
 
